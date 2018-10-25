@@ -1,0 +1,31 @@
+@font-face{
+	font-family: 'Sweet';
+	src: url(../../assets/fonts/kssweetheavycalligraphy.ttf) format('truetype');
+}
+
+.navbar-logo-container{
+	/* background-image: url('https://i.imgur.com/Zg5gfZq.png'); */
+	/* line-height: 36px; */
+	/* font-family: 'Sweet';
+	color: black; */
+	/* padding: .1em !important; */
+	
+	/* position: absolute; */
+	/* left: 0; */
+	/* top: 30%; */
+	/* width: 10%; */
+	/* text-align: center; */
+	/* font-size: 2em; */
+	
+	/* width: 7%; */
+	/* display: inline-block;
+	vertical-align: middle; */
+
+}
+
+.navbar-logo{
+	/* vertical-align: middle; */
+	/* padding-right: .1em !important; */
+	max-height: 23px;
+
+}

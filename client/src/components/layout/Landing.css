@@ -1,0 +1,76 @@
+@font-face{
+	font-family: 'Murasaki';
+	src: url(../../assets/fonts/Murasaki.otf) format('opentype');
+}
+
+@font-face{
+	font-family: 'Sweet';
+	src: url(../../assets/fonts/kssweetheavycalligraphy.ttf) format('truetype');
+}
+
+.landing{
+	background-image: url('../../assets/images/background/black-japanese-wave-gold-line.jpg');
+	/* background-repeat: repeat-y; */
+	height: 100vh;
+	/* background-size: auto; */
+	/* background-repeat: repeat; */
+	/* background-position: center center; */
+	z-index: -10;
+	position: relative;
+	top: 0;
+	bottom: 0;
+
+}
+
+.landing-overlay{
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	/* height: 100vh; */
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+}
+
+.landing-title{
+	font-family: 'Murasaki';
+	color: white;
+	position: absolute;
+	left: 0;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+}
+
+.landing-reveal{
+	/* line-height: 36px; */
+	font-family: 'Sweet';
+	color: white;
+	position: absolute;
+	left: 0;
+	top: 30%;
+	width: 100%;
+	text-align: center;
+	font-size: 5em;
+}
+
+.landing-me{
+	height: 30%;
+	position: absolute;
+	left: 15%;
+	top: 40%;
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+	.landing-reveal{
+		font-size: 4em;
+	}
+} 
+
+@media only screen and (max-width: 400px) {
+	.landing-reveal{
+		font-size: 3em;
+	}
+} 
