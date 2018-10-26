@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Button, Container, Responsive, Menu, Segment } from 'semantic-ui-react';
+import { Image, Button, Container, Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -33,8 +33,8 @@ class Navbar extends Component {
                   </Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <Link to='/portfolio'>
-                    Portfolio
+                  <Link to='/work'>
+                    Work
                   </Link>
                   </Menu.Item>
                 <Menu.Item>
@@ -59,7 +59,7 @@ class Navbar extends Component {
                     </Link>
                   </Button>
                   <Button primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    <Link className='nav-register-button' to='/register'>
+                    <Link className='nav-register-button' to='/signup'>
                       Sign Up
                     </Link>
                   </Button>

@@ -1,21 +1,21 @@
 
 
 
-.register{
-	background-image: url('../../assets/images/background/antique_palette.jpg');
+.work{
+	background-image: url('../../assets/images/background/japanese-sakura.jpg');
 	/* background-repeat: repeat-y; */
 	height: 100vh;
 	/* background-size: auto; */
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
-	z-index: -10;
+	/* z-index: -10; */
 	position: relative;
 	top: 0;
 	bottom: 0;
 
 }
 
-.register-overlay{
+.work-overlay{
 	background-color: rgba(0, 0, 0, 0.7);
 	position: absolute;
 	/* height: 100vh; */
@@ -23,10 +23,10 @@
 	bottom: 0;
 	height: 100%;
 	width: 100%;
-	z-index: -5;
+	/* z-index: -5; */
 }
 
-.register-title{
+.work-title{
 	/* font-family: 'Murasaki'; */
 	color: white;
 	position: absolute;

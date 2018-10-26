@@ -1,8 +1,8 @@
 
 
 
-.login{
-	background-image: url('../../assets/images/background/goldfish.jpg');
+.payment{
+	background-image: url('../../assets/images/background/pattern-in-blue-and-orange.jpg');
 	/* background-repeat: repeat-y; */
 	height: 100vh;
 	/* background-size: auto; */
@@ -15,7 +15,7 @@
 
 }
 
-.login-overlay{
+.payment-overlay{
 	background-color: rgba(0, 0, 0, 0.7);
 	position: absolute;
 	/* height: 100vh; */
@@ -26,7 +26,7 @@
 	/* z-index: -5; */
 }
 
-.login-title{
+.payment-title{
 	/* font-family: 'Murasaki'; */
 	color: white;
 	position: absolute;
