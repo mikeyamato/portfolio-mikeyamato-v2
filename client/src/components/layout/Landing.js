@@ -15,7 +15,7 @@ class Landing extends Component {
 	componentDidMount() {
 		setTimeout(()=>{
 			this.setState({ show: true })
-		}, 1000)
+		}, 600)
 	}
 
 	render() {
@@ -25,7 +25,7 @@ class Landing extends Component {
 					<div className="landing-reveal">
 						<ReactRevealText show={this.state.show} text='やまとしんすけ' transitionTime='4000' threshold={0.4} />
 					</div>
-					<div className='landing-title'>MY FUCKING NEW PAGE</div>
+					<div className='landing-title'>MY NEW PAGE. I watched the storm, so beautiful yet terrific.</div>
 					<Konami>
 						<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-me' />
 					</Konami>

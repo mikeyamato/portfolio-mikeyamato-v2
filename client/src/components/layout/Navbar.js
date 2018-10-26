@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Button, Container, Responsive, Menu, Segment } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -21,22 +22,46 @@ class Navbar extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a' className='navbar-logo-container'>
-                  <Image src='https://i.imgur.com/Zg5gfZq.png' className='navbar-logo' />
+                <Menu.Item className='navbar-logo-container'>
+                  <Link to='/'>
+                    <Image src='https://i.imgur.com/Zg5gfZq.png' className='navbar-logo' />
+                  </Link>
                 </Menu.Item>
-                <Menu.Item as='a'>Home</Menu.Item>
-                <Menu.Item as='a'>Portfolio</Menu.Item>
-                <Menu.Item as='a'>Contact</Menu.Item>
+                <Menu.Item>
+                  <Link to='/'>
+                    Home
+                  </Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to='/portfolio'>
+                    Portfolio
+                  </Link>
+                  </Menu.Item>
+                <Menu.Item>
+                  <Link to='/contact'>
+                    Contact
+                  </Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to='/payment'>
+                    Payment
+                  </Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to='/resources'>
+                    Resources
+                  </Link>
+                </Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' 
-                  // inverted={!fixed}
-                  >
-                    Log in
+                  <Button>
+                    <Link className='nav-login-button' to='/login'>
+                      Log in
+                    </Link>
                   </Button>
-                  <Button as='a' 
-                  // inverted={!fixed} 
-                  primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
+                  <Button primary={fixed} style={{ marginLeft: '0.5em' }}>
+                    <Link className='nav-register-button' to='/register'>
+                      Sign Up
+                    </Link>
                   </Button>
                 </Menu.Item>
               </Container>

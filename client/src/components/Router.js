@@ -5,6 +5,8 @@ import * as actions from '../actions';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Landing from './layout/Landing';
+import Register from './auth/Register';
+import Login from './auth/Login';
 
 class Router extends Component {
 
@@ -17,7 +19,9 @@ class Router extends Component {
 			<BrowserRouter>
 				<div>
 					<Navbar />
-					<Landing />
+					<Route exact path='/' component={ Landing } />
+					<Route exact path='/register' component={ Register } />
+					<Route exact path='/login' component={ Login } />
 					<Footer />
 				</div>
 			</BrowserRouter>
