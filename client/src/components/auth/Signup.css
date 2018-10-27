@@ -36,3 +36,7 @@
 	text-align: center;
 	font-size: 2em;
 }
+
+.ui.form .field>label {
+	color: white !important;
+}
