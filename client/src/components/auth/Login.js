@@ -22,12 +22,13 @@ class Login extends Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
+
 		const user = {
 			email: this.state.email,
 			password: this.state.password
 		}
 		axios
-			.post('/api/users/logi', user)
+			.post('/api/users/login', user)
 			.then(res => console.log(res.data))
 			.catch(err => this.setState({ errors: err.response.data }))
 	}

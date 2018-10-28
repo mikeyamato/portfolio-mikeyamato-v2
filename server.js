@@ -10,6 +10,7 @@ const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const contact = require('./routes/api/contact');
 
 app.use(bodyparser.urlencoded({ extended:false }));
 app.use(bodyparser.json());
@@ -28,6 +29,7 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+app.use('/api/contact', contact);
 
 http.createServer(app).listen(port, () => {
 	console.log(`server listening to port ${port}`);
