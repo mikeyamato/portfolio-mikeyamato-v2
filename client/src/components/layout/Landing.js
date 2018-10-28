@@ -31,12 +31,12 @@ class Landing extends Component {
 						<ReactRevealText show={this.state.show} text='やまとしんすけ' transitionTime='4000' threshold={0.4} />
 					</div>
 					<div className='landing-title'>
-							MY NEW PAGE. I watched the storm, so beautiful yet terrific.
-						</div>
+						MY NEW PAGE. I watched the storm, so beautiful yet terrific.
+					</div>
 					<Konami>
-						
 
 						<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-me' />
+						
 					</Konami>
 				</div>
 			</div>

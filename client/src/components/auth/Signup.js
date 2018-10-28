@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Message, Grid, Container, Button, Form } from 'semantic-ui-react';
 import axios from 'axios';
+import { headShake } from 'react-animations'; // need styled-components as well
 import './Signup.css';
 
 class Signup extends Component {
