@@ -34,3 +34,6 @@ app.use('/api/contact', contact);
 http.createServer(app).listen(port, () => {
 	console.log(`server listening to port ${port}`);
 })
+
+// this supposedly helps stop the `Error: listen EADDRINUSE :::5000` notificiations in terminal..it doesn't
+process.on('SIGINT', () => { console.log("Bye Mike!"); process.exit(); });

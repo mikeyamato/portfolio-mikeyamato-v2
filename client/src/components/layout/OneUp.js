@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
+/*
+audio file for Sound requires it to be placed in the public folder
+*/
+
+
+import React from 'react';
 import Sound from 'react-sound';
 
-
-class OneUp extends Component {
-	render() {
-		return (
+const OneUp = (props) => {
+	// console.log('when does this get called?')
+	return (
+		<div>
 			<Sound
-      url='/assets/audio/smb_powerup.wav'
-      playStatus={Sound.status.PAUSED}
+				url={require('../../assets/audio/smb_powerup.wav')}
+				playStatus={props.playStatus}
     	/>
-		)
-	}
+			
+		</div>
+	)
 }
 
 export default OneUp;

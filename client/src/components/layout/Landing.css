@@ -8,6 +8,18 @@
 	src: url(../../assets/fonts/kssweetheavycalligraphy.ttf) format('truetype');
 }
 
+h2.ui.header{
+	color: white;
+}
+
+/* div.centered.three.column.row{
+	align-items: center;
+} */
+
+/* div.eight.wide.column{
+	align-items: center;
+} */
+
 .landing{
 	background-image: url('../../assets/images/background/black-japanese-wave-gold-line.jpg');
 	/* background-repeat: repeat-y; */
@@ -33,6 +45,17 @@
 	/* z-index: -5; */
 }
 
+.landing-name{
+	/* font-family: 'Murasaki'; */
+	color: white;
+	/* position: absolute; */
+	left: 0;
+	top: 40%;
+	width: 100%;
+	text-align: center !important;
+	font-size: 2em;
+}
+
 .landing-title{
 	/* font-family: 'Murasaki'; */
 	color: white;
@@ -44,8 +67,7 @@
 	font-size: 2em;
 }
 
-.landing-reveal{
-	/* line-height: 36px; */
+.landing-jText{
 	font-family: 'Sweet';
 	color: white;
 	position: absolute;
@@ -62,6 +84,12 @@
 	left: 15%;
 	top: 40%;
 }
+
+.landing-paragraph{
+	color: white;
+}
+
+
 
 @media (min-width: 401px) and (max-width: 600px) {
 	.landing-reveal{

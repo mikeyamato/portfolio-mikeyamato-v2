@@ -2,9 +2,9 @@
 
 
 .work{
-	background-image: url('../../assets/images/background/japanese-sakura.jpg');
+	background-image: url('../../assets/images/background/japanese-seamless-pattern-cut-out.jpg');
 	/* background-repeat: repeat-y; */
-	height: 100vh;
+	height: 190vh;
 	background-size: auto;
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
@@ -16,7 +16,7 @@
 }
 
 .work-overlay{
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 	position: absolute;
 	/* height: 100vh; */
 	top: 0;
@@ -37,6 +37,9 @@
 	font-size: 2em;
 }
 
-.work-images{
-	width: 20% !important;
+.work-divider{
+	font-size: 1.5em !important;
 }
+/* .work-images{
+	width: 10% !important;
+} */

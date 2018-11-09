@@ -2,7 +2,7 @@
 
 
 .payment{
-	background-image: url('../../assets/images/background/pattern-in-blue-and-orange.jpg');
+	background-image: url('../../assets/images/background/japanese-clouds-waves-flowers.jpg');
 	/* background-repeat: repeat-y; */
 	height: 100vh;
 	background-size: auto;
@@ -16,7 +16,7 @@
 }
 
 .payment-overlay{
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	/* height: 100vh; */
 	top: 0;

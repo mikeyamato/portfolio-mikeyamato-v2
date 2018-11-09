@@ -16,7 +16,7 @@
 }
 
 .signup-overlay{
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	/* height: 100vh; */
 	top: 0;
