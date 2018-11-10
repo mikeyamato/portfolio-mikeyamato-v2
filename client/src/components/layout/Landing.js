@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Img from 'react-image';
 import Konami from 'react-konami-code';
 import Sound from 'react-sound';
-import OneUp from './OneUp';
+import OneUp from '../common/OneUp';
 import RevealText from './Reveal';
 import './Landing.css';
 
@@ -22,8 +22,17 @@ class Landing extends Component {
 
 	componentDidMount() {
 		setTimeout(()=>{
-			this.setState({ show: true })
+			this.setState({ show: true  })
 		}, 600)
+	}
+
+	componentDidUpdate() {
+		if (this.state.sound === Sound.status.PLAYING) {
+			setTimeout(()=>{
+				this.setState({ sound: Sound.status.STOPPED  })
+				console.log('component updated')
+			}, 1000)
+		}
 	}
 
 	oneUp() {
@@ -39,17 +48,17 @@ class Landing extends Component {
 				<div className='landing-overlay'>
 					<Container>
 						<Grid>
-							<Grid.Row centered columns={2}>
+							<Grid.Row>
 								<Grid.Column className='landing-name'>
 									Shinsuke "Mike" Yamato
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row >
+							<Grid.Row>
 								<Grid.Column className="landing-jText">
 									<RevealText show={this.state.show} text={this.state.japaneseName} />
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row >
+							<Grid.Row>
 								<Grid.Column className='landing-title'>
 									MY NEW PAGE. I watched the storm, so beautiful yet terrific.
 								</Grid.Column>
@@ -82,7 +91,7 @@ class Landing extends Component {
 								</Grid.Column>
 							</Grid.Row>
 							<Konami 
-								timeout={10000}
+								timeout={2000}
 								action={this.oneUp}
 							>
 								<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-me' />

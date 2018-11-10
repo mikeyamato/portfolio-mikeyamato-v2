@@ -28,7 +28,7 @@
 
 .work-title{
 	/* font-family: 'Murasaki'; */
-	color: white;
+	color: black;
 	position: absolute;
 	left: 0;
 	top: 40%;
@@ -40,6 +40,26 @@
 .work-divider{
 	font-size: 1.5em !important;
 }
+
+/* height of 10% as an arbitrary number. looks the same at 20% also */
+img.ui.medium.middle.aligned.image{
+	height: 10%;
+}
+
+.work-card-image-argo{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* center modal description */
+.work-modal-desc{
+	margin: auto 0;
+}
+
+/* .work-modal-img{
+	height: 30%;
+} */
+
 /* .work-images{
 	width: 10% !important;
 } */

@@ -81,8 +81,9 @@ h2.ui.header{
 .landing-me{
 	height: 30%;
 	position: absolute;
-	left: 15%;
-	top: 40%;
+	left: 40%;
+	top: 20%;
+	z-index: 1;
 }
 
 .landing-paragraph{

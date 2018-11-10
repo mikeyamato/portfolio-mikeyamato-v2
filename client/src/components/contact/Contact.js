@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Grid, Form, Container, Input, Button } from 'semantic-ui-react';
+import ConfettiTime from './Confetti';
+import Konami from 'react-konami-code';
+import Sound from 'react-sound';
+import OneUp from '../common/OneUp';
 import './Contact.css';
 
 class Contact extends Component {
+
 	state = {
 		fname: '',
 		lname: '',
@@ -11,7 +16,12 @@ class Contact extends Component {
 		centralOfficeCode: '',
 		lineNumber: '',
 		message: '',
+		active: '',
+		sound: Sound.status.STOPPED,
+		runConfetti: false,
 	}
+
+	oneUp = this.oneUp.bind(this);
 
 	onChange = (e) => {
 		this.setState({ [e.target.name] : e.target.value })
@@ -33,11 +43,51 @@ class Contact extends Component {
 		console.log(user)
 	}
 
+	oneUp() {
+		// console.log('this got called')
+		this.setState({ 
+			sound: Sound.status.PLAYING,
+			runConfetti: true,
+		})
+	}
+
+	componentDidUpdate() {
+		if (this.state.sound === Sound.status.PLAYING) {
+			setTimeout(()=>{
+				this.setState({ sound: Sound.status.STOPPED  })
+				console.log('sound updated')
+			}, 1000)
+		}
+		else if (this.state.runConfetti === true) {
+			setTimeout(()=>{
+				this.setState({ runConfetti: false })
+				console.log('confetti updated')
+			}, 11000)
+		}
+	}
+
 	render() {
+		const { runConfetti, sound } = this.state;
+
 		return (
 			<div className='contact'>
 				<div className='contact-overlay'>
-				<Container>
+					
+					{/* easter egg */}
+					<Grid.Row centered columns={2}> 
+						<Grid.Column>
+							<Konami 
+								timeout={10000}
+								action={this.oneUp}
+							>
+								<OneUp playStatus={sound}/>
+								<ConfettiTime run={runConfetti}/>
+							</Konami>
+						</Grid.Column>
+					</Grid.Row>
+
+
+					<Container>
 						<Grid>
 							<Grid.Row centered columns={2}>  {/* NOTE: to center, add one extra column */}
 								<Grid.Column>
