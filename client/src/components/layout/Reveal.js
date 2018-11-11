@@ -7,8 +7,9 @@ const RevealText = (props) => {
 			<ReactRevealText 
 				show={props.show} 
 				text={props.text} 
-				transitionTime={4000} 
-				threshold={0.4} 
+				transitionTime={2500} 
+				threshold={0.5}
+				timingFunction="ease-in" 
 			/>
 		</div>
 	)

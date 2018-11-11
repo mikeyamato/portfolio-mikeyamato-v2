@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-import sizeMe from 'react-sizeme'
 import Confetti from 'react-confetti'
 
 

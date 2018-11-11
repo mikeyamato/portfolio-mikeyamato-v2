@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Container, Image, Header, Form, Button } from 'semantic-ui-react';
+import { Grid, Container, Image, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import FadeIn from 'react-fade-in';
+
 
 import Img from 'react-image';
 import Konami from 'react-konami-code';
@@ -14,7 +16,12 @@ class Landing extends Component {
 	state = { 
 		show: false, 
 		sound: Sound.status.STOPPED,
-		japaneseName: 'やまとしんすけ',
+		delay: 5000,
+		transitionDuration: 2000,
+
+		// transitionTimeTitle: 2500,
+		// transitionTimeBody: 1000,
+		// timeBody: 0,
 	}
 
 	oneUp = this.oneUp.bind(this);
@@ -23,7 +30,10 @@ class Landing extends Component {
 	componentDidMount() {
 		setTimeout(()=>{
 			this.setState({ show: true  })
-		}, 600)
+		}, 100);
+		setTimeout(()=>{
+			this.setState({ showTitle: true  })
+		}, 2000);
 	}
 
 	componentDidUpdate() {
@@ -31,7 +41,7 @@ class Landing extends Component {
 			setTimeout(()=>{
 				this.setState({ sound: Sound.status.STOPPED  })
 				console.log('component updated')
-			}, 1000)
+			}, 4000)
 		}
 	}
 
@@ -43,80 +53,111 @@ class Landing extends Component {
 	}
 
 	render() {
+		const { delay, transitionDuration } = this.state;
+
 		return (
 			<div className='landing'>
 				<div className='landing-overlay'>
 					<Container>
 						<Grid>
-							<Grid.Row>
-								<Grid.Column className='landing-name'>
-									Shinsuke "Mike" Yamato
+							<Grid.Row className='landing-jText'>
+								<Grid.Column >
+									<RevealText 
+										show={this.state.show} 
+										text={'やまとしんすけ'} 
+									/>
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row>
-								<Grid.Column className="landing-jText">
-									<RevealText show={this.state.show} text={this.state.japaneseName} />
+							<Grid.Row className='landing-eText'>
+								<Grid.Column >
+									<RevealText 
+										show={this.state.show} 
+										text={'Shinsuke \"Mike\" Yamato'} 
+									/>
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row>
-								<Grid.Column className='landing-title'>
-									MY NEW PAGE. I watched the storm, so beautiful yet terrific.
-								</Grid.Column>
-							</Grid.Row>
-							<Grid.Row centered columns={3} verticalAlign='middle'>
-								<Grid.Column width={8} className='landing-paragraph' >
-									<Header as='h2'>Header</Header>
-									<p>
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-										Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-										ridiculus mus.  
-									</p>
-								</Grid.Column>
-								<Grid.Column width={4}>
-									<Image src={require('../../assets/logos/react.svg')} size='small' />
+							<Grid.Row className='landing-title'>
+								<Grid.Column >
+									<RevealText 
+										show={this.state.showTitle} 
+										text={'Software Engineer / Problem Solver Extraordinaire'} 
+									/>
 								</Grid.Column>
 							</Grid.Row>
 
-							<Grid.Row centered columns={3} verticalAlign='middle'>
-								<Grid.Column width={4}>
-									<Image src={require('../../assets/logos/react.svg')} size='small' />
-								</Grid.Column>
-								<Grid.Column width={8} className='landing-paragraph' >
-									<Header as='h2'>Header</Header>
-									<p>
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-										Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-										ridiculus mus.  
-									</p>
-								</Grid.Column>
-							</Grid.Row>
-							<Konami 
-								timeout={2000}
-								action={this.oneUp}
-							>
-								<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-me' />
-								<OneUp playStatus={this.state.sound}/>
-							</Konami>
+							
+								<Grid.Row className='landing-desc'>
+									<Grid.Column>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<p>Los Angeles based full-stack software engineer with a MERN stack background.</p>
+										</FadeIn>
+									</Grid.Column>
+								</Grid.Row>
+								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
+									<Grid.Column width={8}>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<Header as='h2' className='landing-header'>ABOUT</Header>
+										</FadeIn>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<p>
+												While my roots are grouned in JavaScript I take great joy in learning new frameworks, packages, and languages. I am equally comfortable working on the backend as I am on the frontend. 
+											</p>
+										</FadeIn>
+									</Grid.Column>
+									<Grid.Column width={2}>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<Image src={require('../../assets/logos/react.svg')} size='small' />
+										</FadeIn>
+									</Grid.Column>
+								</Grid.Row>
 
-							<Grid.Row centered columns={2} verticalAlign='middle'>
-								<Grid.Column width={8} className='landing-paragraph' >
-									<Header as='h2'>Header</Header>
-									<p>
-										Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-										Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-										ridiculus mus.  
-									</p>
-								</Grid.Column>
-							</Grid.Row>
-							<Grid.Row centered columns={2} verticalAlign='middle'>
-								<Link to='/work'>
-									<Button type='button' animated='fade'>
-										<Button.Content visible>Learn More</Button.Content>
-										<Button.Content hidden>Learn More</Button.Content>
-									</Button>
-								</Link>
-							</Grid.Row>
+								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
+									<Grid.Column width={2}>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<Image src={require('../../assets/logos/react.svg')} size='small' />
+										</FadeIn>
+									</Grid.Column>
+									<Grid.Column width={8}>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<Header as='h2' className='landing-header'>PROJECTS</Header>
+										</FadeIn>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<p>
+												I've been fortunate enough to work on awesome projects ranging from creating a Slackbot to an augmented reality mobile application.
+											</p>
+										</FadeIn>
+									</Grid.Column>
+								</Grid.Row>
+								<Konami 
+									timeout={2500}
+									action={this.oneUp}
+								>
+									<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-my-pic' />
+									<OneUp playStatus={this.state.sound}/>
+								</Konami>
 
+								<Grid.Row centered columns={2} verticalAlign='middle' className='landing-paragraph'>
+									<Grid.Column width={8}>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<Header as='h2' className='landing-header'>MORE</Header>
+										</FadeIn>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+											<p>
+												Click the button below to find out more about the work I've done, how to contact me, and more!  
+											</p>
+										</FadeIn>
+									</Grid.Column>
+								</Grid.Row>
+								<Grid.Row centered columns={2} verticalAlign='middle'>
+									<Link to='/work'>
+										<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Button type='button' animated='fade'>
+											<Button.Content visible>Learn More</Button.Content>
+											<Button.Content hidden>Learn More</Button.Content>
+										</Button>
+										</FadeIn>
+									</Link>
+								</Grid.Row>
 						</Grid>
 
 					</Container>

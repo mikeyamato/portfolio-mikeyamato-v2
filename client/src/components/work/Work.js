@@ -33,6 +33,11 @@ class Work extends Component {
 		}
 	}
 
+	// helps with having the page open at the top
+	componentDidMount() {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		const { active, sound } = this.state
 
@@ -113,7 +118,7 @@ class Work extends Component {
 											/>
 											<Card.Content>
 												<Card.Header>ARgo</Card.Header>
-												<Card.Description>Mobile AR Game for iOS. Where Pokemon GO meets geocaching.<br /></Card.Description>
+												<Card.Description>Mobile AR Game for iOS. Where Pokemon Go meets geocaching.<br /></Card.Description>
 											</Card.Content>
 										</Card>
 									} dimmer={'blurring'} >
