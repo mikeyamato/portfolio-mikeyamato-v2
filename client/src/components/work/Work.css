@@ -42,9 +42,9 @@
 }
 
 /* height of 10% as an arbitrary number. looks the same at 20% also */
-img.ui.medium.middle.aligned.image{
+/* img.ui.medium.middle.aligned.image{
 	height: 10%;
-}
+} */
 
 .work-card-image-argo{
 	margin-left: auto;
@@ -54,6 +54,10 @@ img.ui.medium.middle.aligned.image{
 /* center modal description */
 .work-modal-desc{
 	margin: auto 0;
+}
+
+.work-card-modal-image{
+	height: 10% !important;
 }
 
 /* .work-modal-img{

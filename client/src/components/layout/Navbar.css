@@ -29,3 +29,7 @@
 	max-height: 23px;
 
 }
+
+a:link,a:visited,a:hover,a:active{
+	color: black !important;
+}

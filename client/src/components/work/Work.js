@@ -74,7 +74,7 @@ class Work extends Component {
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image src='https://i.imgur.com/GCdavJR.gif' />
 											<Card.Content>
 												<Card.Header>Groupr</Card.Header>
 												{/* <Card.Meta>
@@ -86,7 +86,11 @@ class Work extends Component {
 									} dimmer={'blurring'} >
 										<Modal.Header>Groupr</Modal.Header>
 										<Modal.Content image>
-											<Image size='large' src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image
+												className='work-card-modal-image'
+												size='large' 
+												src='https://i.imgur.com/GCdavJR.gif'
+											/>
 											<Modal.Description className='work-modal-desc'>
 												{/* <Header>Hub for high quality tech networking events. Built using the MERN stack.</Header> */}
 												<p>Groupr connects technology companies with technical talent in your area. We understand that the hiring process can be difficult not only for recruiters, but also the candidates.</p>
@@ -114,7 +118,7 @@ class Work extends Component {
 											<Image
 												className='work-card-image-argo'
 												size='tiny' 
-												src={require('../../assets/screenshots/livedemo-argo.gif')} 
+												src='https://i.imgur.com/652HhKs.gif' 
 											/>
 											<Card.Content>
 												<Card.Header>ARgo</Card.Header>
@@ -124,7 +128,12 @@ class Work extends Component {
 									} dimmer={'blurring'} >
 										<Modal.Header>ARgo</Modal.Header>
 										<Modal.Content image>
-											<Image verticalAlign='middle' size='medium' src={require('../../assets/screenshots/livedemo-argo.gif')} />
+											<Image 
+												className='work-card-modal-image'
+												verticalAlign='middle' 
+												size='medium' 
+												src='https://i.imgur.com/652HhKs.gif'
+											/>
 											<Modal.Description className='work-modal-desc'>
 												{/* <Header>Default Profile Image</Header> */}
 												<p>ARgo is a mobile application that uses location intelligence and augmented reality to immerse users in a new experience. Users have the ability to enter into new worlds through AR portals and collect badges with their friends.</p> 
@@ -148,7 +157,7 @@ class Work extends Component {
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image src='https://i.imgur.com/Ptgmgh3.gif' />
 											<Card.Content>
 												<Card.Header>Devevloper Konnector</Card.Header>
 												<Card.Description>A network made by a developer for developers.</Card.Description>
@@ -157,7 +166,11 @@ class Work extends Component {
 									} dimmer={'blurring'} >
 										<Modal.Header>Devevloper Konnector</Modal.Header>
 										<Modal.Content image>
-											<Image size='large' src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image 
+												className='work-card-modal-image'
+												size='large' 
+												src='https://i.imgur.com/Ptgmgh3.gif'
+											/>
 											<Modal.Description className='work-modal-desc'>
 												{/* <Header>Default Profile Image</Header> */}
 												<p>DevKonnector is a social platform for developers. Create profiles, add posts, and connect with other developers.</p>
