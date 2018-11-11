@@ -60,6 +60,11 @@
 	height: 10% !important;
 }
 
+.work-card-header{
+	color: gray !important;
+	font-style: oblique;
+}
+
 /* .work-modal-img{
 	height: 30%;
 } */

@@ -3,6 +3,7 @@ import { Button, Modal, Header, Container, Card, Image, Grid, Divider, Embed } f
 import Konami from 'react-konami-code';
 import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
+import Videos from './Videos';
 import './Work.css';
 
 // next iteration, randomly pick a video
@@ -33,9 +34,9 @@ class Work extends Component {
 		}
 	}
 
-	// helps with having the page open at the top
+	
 	componentDidMount() {
-		window.scrollTo(0, 0);
+		window.scrollTo(0, 0);  // helps with having the page open at the top
 	}
 
 	render() {
@@ -74,9 +75,9 @@ class Work extends Component {
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://i.imgur.com/GCdavJR.gif' />
+											<Image src='https://i.imgur.com/T50nUls.png' />
 											<Card.Content>
-												<Card.Header>Groupr</Card.Header>
+												<Card.Header className='work-card-header' >Groupr</Card.Header>
 												{/* <Card.Meta>
 													<span className='date'>Joined in 2015</span>
 												</Card.Meta> */}
@@ -118,10 +119,10 @@ class Work extends Component {
 											<Image
 												className='work-card-image-argo'
 												size='tiny' 
-												src='https://i.imgur.com/652HhKs.gif' 
+												src='https://i.imgur.com/fBWx9cc.png' 
 											/>
 											<Card.Content>
-												<Card.Header>ARgo</Card.Header>
+												<Card.Header className='work-card-header' >ARgo</Card.Header>
 												<Card.Description>Mobile AR Game for iOS. Where Pokemon Go meets geocaching.<br /></Card.Description>
 											</Card.Content>
 										</Card>
@@ -157,9 +158,9 @@ class Work extends Component {
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://i.imgur.com/Ptgmgh3.gif' />
+											<Image src='https://i.imgur.com/vcETggk.png' />
 											<Card.Content>
-												<Card.Header>Devevloper Konnector</Card.Header>
+												<Card.Header className='work-card-header' >Devevloper Konnector</Card.Header>
 												<Card.Description>A network made by a developer for developers.</Card.Description>
 											</Card.Content>
 										</Card>
@@ -194,51 +195,26 @@ class Work extends Component {
 						{/* second row */}
 
 							<Grid.Row centered columns={4}>
-								<Grid.Column>
-									<Modal trigger={
-										<Card fluid>
-											<Image src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
-											<Card.Content>
-												<Card.Header>Slackbot Fist-to-Five</Card.Header>
-												<Card.Description>Fist to Five survey created for the popular Slack service.</Card.Description>
-											</Card.Content>
-										</Card>
-									} dimmer={'blurring'} >
-										<Modal.Header>Slackbot Fist-to-Five</Modal.Header>
-										<Modal.Content image>
-											<Image size='large' src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
-											<Modal.Description className='work-modal-desc'>
-												{/* <Header>Default Profile Image</Header> */}
-												<p>This oauth application was created to anonymously poll student in class using the fist-to-five technique and a custom Slack slash command.</p>
-											</Modal.Description>
-										</Modal.Content>
-										<Modal.Actions>
-											<Button 
-												color='violet' 
-												href='https://github.com/mikeyamato/slackbot-fist-to-five-oauth'  
-												rel="noopener noreferrer" 
-												target="_blank"
-											>
-												Explore
-											</Button>
-										</Modal.Actions>
-									</Modal>
-								</Grid.Column>
+								
 							
 							
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image src='https://i.imgur.com/Hy9jkxL.png' />
 											<Card.Content>
-												<Card.Header>Personality Insights</Card.Header>
+												<Card.Header className='work-card-header' >Personality Insights</Card.Header>
 												<Card.Description>Analyze social media for gift recommendations</Card.Description>
 											</Card.Content>
 										</Card>
 									} dimmer={'blurring'} >
 										<Modal.Header>GiftHub - Twitter/Watson Personality Insights</Modal.Header>
 										<Modal.Content image>
-											<Image size='large' src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image 
+												className='work-card-modal-image'
+												size='large' 
+												src='https://i.imgur.com/tHeXysv.gif'
+											/>
 											<Modal.Description className='work-modal-desc'>
 												{/* <Header>Default Profile Image</Header> */}
 												<p>Struggling to find the gifts for your friends and family? Use Gifthub to find the perfect gift!</p>
@@ -266,16 +242,55 @@ class Work extends Component {
 								<Grid.Column>
 									<Modal trigger={
 										<Card fluid>
-											<Image src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image src='https://i.imgur.com/CmJNnfp.png' />
 											<Card.Content>
-												<Card.Header>Slackbot Person Finder</Card.Header>
+												<Card.Header className='work-card-header' >Slackbot Fist-to-Five</Card.Header>
+												<Card.Description>Fist to Five survey created for the popular Slack service.</Card.Description>
+											</Card.Content>
+										</Card>
+									} dimmer={'blurring'} >
+										<Modal.Header>Slackbot Fist-to-Five</Modal.Header>
+										<Modal.Content image>
+											<Image 
+												className='work-card-modal-image'
+												size='large' 
+												src='https://i.imgur.com/o9RfCiA.gif'
+											/>
+											<Modal.Description className='work-modal-desc'>
+												{/* <Header>Default Profile Image</Header> */}
+												<p>This oauth application was created to anonymously poll student in class using the fist-to-five technique and a custom Slack slash command.</p>
+											</Modal.Description>
+										</Modal.Content>
+										<Modal.Actions>
+											<Button 
+												color='violet' 
+												href='https://github.com/mikeyamato/slackbot-fist-to-five-oauth'  
+												rel="noopener noreferrer" 
+												target="_blank"
+											>
+												Explore
+											</Button>
+										</Modal.Actions>
+									</Modal>
+								</Grid.Column>
+
+								<Grid.Column>
+									<Modal trigger={
+										<Card fluid>
+											<Image src='https://i.imgur.com/zB63e4X.png' />
+											<Card.Content>
+												<Card.Header className='work-card-header' >Slackbot Person Finder</Card.Header>
 												<Card.Description>A Slack bot to select people randomly with a simple slash command</Card.Description>
 											</Card.Content>
 										</Card>
 									} dimmer={'blurring'} >
 										<Modal.Header>Slackbot Random Victim Finder</Modal.Header>
 										<Modal.Content image>
-											<Image size='large' src='https://media.giphy.com/media/yNffnRFgaBtuDhllsT/giphy.gif' />
+											<Image 
+												className='work-card-modal-image'
+												size='large' 
+												src='https://i.imgur.com/QRVLJQr.gif'
+											/>
 											<Modal.Description className='work-modal-desc'>
 												{/* <Header>Default Profile Image</Header> */}
 												<p>This application was created to randomly select a student in class using a custom Slack slash command followed up with the class type.</p>
@@ -308,11 +323,12 @@ class Work extends Component {
 										<Divider horizontal className='work-divider'>
 											Easter Egg
 										</Divider>
-										<Embed 
+										<Videos active={active}/>
+										{/* <Embed 
 											active={active} 
 											id='FTQbiNvZqaY' 
 											source='youtube' 
-										/>
+										/> */}
 									</Konami>
 								</Grid.Column>
 							</Grid.Row>

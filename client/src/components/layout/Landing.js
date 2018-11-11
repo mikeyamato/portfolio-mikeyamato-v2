@@ -16,7 +16,7 @@ class Landing extends Component {
 	state = { 
 		show: false, 
 		sound: Sound.status.STOPPED,
-		delay: 5000,
+		delay: 5500,
 		transitionDuration: 2000,
 
 		// transitionTimeTitle: 2500,
