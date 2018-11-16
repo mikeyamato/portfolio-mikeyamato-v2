@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Grid, Form, Container, Input, Button } from 'semantic-ui-react';
+import { Grid, Form, Container, Input, Button, Divider, Segment, List, Modal, Image, Header, Icon, Embed } from 'semantic-ui-react';
 import ConfettiTime from './Confetti';
 import Konami from 'react-konami-code';
 import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
 import './Contact.css';
+import sizeMe from 'react-sizeme';
+
 
 class Contact extends Component {
 
@@ -68,6 +70,7 @@ class Contact extends Component {
 
 	render() {
 		const { runConfetti, sound } = this.state;
+		const { width, height } = this.props.size
 
 		return (
 			<div className='contact'>
@@ -81,7 +84,7 @@ class Contact extends Component {
 								action={this.oneUp}
 							>
 								<OneUp playStatus={sound}/>
-								<ConfettiTime run={runConfetti}/>
+								<ConfettiTime run={runConfetti} width={width} height={height}/>
 							</Konami>
 						</Grid.Column>
 					</Grid.Row>
@@ -89,15 +92,96 @@ class Contact extends Component {
 
 					<Container>
 						<Grid>
-							<Grid.Row centered columns={2}>  {/* NOTE: to center, add one extra column */}
+							<Grid.Row className='contact-grid' centered columns={2}>  {/* NOTE: to center, add one extra column */}
 								<Grid.Column>
 									<div className='contact-title'>
-										Contact
+										CONTACT
 									</div>
 								</Grid.Column>
 							</Grid.Row>
-							{/* name */}
-							<Grid.Row centered columns={2} >
+							
+							<Grid.Row>
+								<Grid.Column>
+									<Header textAlign='center' className='contact-desc'>
+										Te eum doming eirmod, nominati pertinacia argumentum ad his.
+									</Header>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={3} >
+								<Divider vertical></Divider>
+								<Grid.Column className='contact-left-column'>
+									<Container className='contact-left-copy'>
+										{/* <p>
+											Te eum doming eirmod, nominati pertinacia argumentum ad his.
+										</p> */}
+										<List className='contact-list' >
+											
+													
+													<List.Item>
+														<List.Icon name='phone' />
+														<List.Content verticalAlign='middle' >
+															<a href='tel:17472157826' className='contact-list-content'>
+																(747) 215-7826
+															</a>
+														</List.Content>
+													</List.Item>
+													<List.Item>
+														<List.Icon name='mail' />
+														<List.Content verticalAlign='middle' >
+															<a href='mailto:mikeyamato@gmail.com' className='contact-list-content'>
+																mikeyamto@gmail.com
+															</a>
+														</List.Content>
+													</List.Item>
+													<List.Item>
+														<List.Icon name='github' />
+														<List.Content verticalAlign='middle' >
+															<a
+																href='https://github.com/mikeyamato'  
+																rel="noopener noreferrer" 
+																target="_blank"
+																className='contact-list-content'
+															>
+																GitHub
+															</a>
+														</List.Content>
+													</List.Item>
+													<List.Item>
+														<List.Icon name='linkedin' />
+														<List.Content verticalAlign='middle' >
+															<a
+																className='contact-list-content'
+																href='https://www.linkedin.com/in/mikeyamato/'  
+																rel="noopener noreferrer" 
+																target="_blank"
+															>
+																LinkedIn
+															</a>
+														</List.Content>
+													</List.Item>
+													<List.Item>
+														<List.Icon name='file alternate' />
+														<List.Content verticalAlign='middle' className='contact-list-content'>
+
+															<Modal dimmer={'blurring'} trigger={<a className='contact-list-content'>Résumé</a>} >
+																<Modal.Content scrolling>
+																	<Embed
+																		defaultActive={true}
+																		iframe={'https://docs.google.com/viewer?srcid=1N0NI3-Dxb5ac3qCgAYJm4Xx796XRZA-d&pid=explorer&efh=false&a=v&chrome=false&embedded=true'} className='contact-iframe'
+																	/>
+																	{/* NOTE: replace id (example: `1N0NI3-Dxb5ac3qCgAYJm4Xx796XRZA-d`) */}
+																</Modal.Content>
+															</Modal>
+														</List.Content>
+													</List.Item>
+													
+												
+										</List>
+										{/* <Segment color='grey' vertical className='contact-left-copy'>Pellentesque habitant morbi tristique senectus.</Segment>
+										<Segment color='grey' vertical className='contact-left-copy'>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id.</Segment> */}
+									</Container>
+								</Grid.Column>
+
 								<Grid.Column>
 									<Form onSubmit={this.onSubmit} >
 										<Form.Group widths='equal' >
@@ -206,4 +290,4 @@ class Contact extends Component {
 	}
 }
 
-export default Contact;
+export default sizeMe({ monitorHeight: true })(Contact);  // `sizeMe({ monitorHeight: true })` required to calculate display size 

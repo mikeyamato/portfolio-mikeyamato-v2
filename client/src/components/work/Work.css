@@ -4,7 +4,8 @@
 .work{
 	background-image: url('../../assets/images/background/japanese-seamless-pattern-cut-out.jpg');
 	/* background-repeat: repeat-y; */
-	height: 190vh;
+	min-height: 160vh;
+	/* height: 190vh; */
 	background-size: auto;
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
@@ -26,6 +27,11 @@
 	/* z-index: -5; */
 }
 
+.work-grid{
+	margin-top: 9%;
+	margin-bottom: 2%;
+}
+
 .work-title{
 	/* font-family: 'Murasaki'; */
 	color: black;
@@ -34,11 +40,13 @@
 	top: 40%;
 	width: 100%;
 	text-align: center;
-	font-size: 2em;
+	font-size: 3em;
 }
 
 .work-divider{
-	font-size: 1.5em !important;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	font-size: 1.8em !important;
 }
 
 /* height of 10% as an arbitrary number. looks the same at 20% also */
@@ -69,6 +77,22 @@
 	height: 30%;
 } */
 
-/* .work-images{
-	width: 10% !important;
-} */
+.work-grid-row{
+	display: flex !important;
+	align-items: center !important;
+	/* justify-content: center !important; */
+}
+
+.work-images{
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	/* align-items: center !important; */
+
+
+	/* position: absolute !important;
+	top: 50% !important;
+  left: 50% !important;
+	margin-right: -50% !important;
+	transform: translate(-50%, -50%) !important; */
+}

@@ -14,7 +14,8 @@ import Resources from './resources/Resources';
 import Signup from './auth/Signup';
 import Login from './auth/Login';
 import NotFound from './not-found/NotFound';
-
+import ScrollToTop from './Scroll';
+import './router.css';
 
 class Router extends Component {
 
@@ -26,16 +27,18 @@ class Router extends Component {
 		return (
 			<Provider store={ store } > 
 				<BrowserRouter>
-					<div>
+					<div className='router-main'>
 						<Navbar />
-						<Route exact path='/' component={ Landing } />
-						<Route exact path='/work' component={ Work } />
-						<Route exact path='/contact' component={ Contact } />
-						<Route exact path='/payment' component={ Payment } />
-						<Route exact path='/resources' component={ Resources } />
-						<Route exact path='/signup' component={ Signup } />
-						<Route exact path='/login' component={ Login } />
-						<Route exact path='/not-found' component={ NotFound } />
+							<ScrollToTop>
+								<Route exact path='/' component={ Landing } />
+								<Route exact path='/work' component={ Work } />
+								<Route exact path='/contact' component={ Contact } />
+								<Route exact path='/payment' component={ Payment } />
+								<Route exact path='/resources' component={ Resources } />
+								<Route exact path='/signup' component={ Signup } />
+								<Route exact path='/login' component={ Login } />
+								<Route exact path='/not-found' component={ NotFound } />
+							</ScrollToTop>
 						<Footer />
 					</div>
 				</BrowserRouter>

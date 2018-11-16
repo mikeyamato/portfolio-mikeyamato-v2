@@ -12,15 +12,12 @@ h2.ui.header{
 	color: white;
 }
 
-.landing-header{
-	/* color: red !important; */
-	font-style: oblique;
-}
-
 .landing{
+	flex: 1;
 	background-image: url('../../assets/images/background/black-japanese-wave-gold-line.jpg');
 	/* background-repeat: repeat-y; */
-	height: 170vh;
+	min-height: 170vh;
+	/* height: 170vh; */
 	background-size: auto;
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
@@ -45,7 +42,7 @@ h2.ui.header{
 
 
 .landing-jText{
-	margin-top: 9%;
+	margin-top: 11%;
 	font-family: 'Sweet';
 	color: white;
 	position: absolute;
@@ -80,11 +77,11 @@ h2.ui.header{
 	top: 30%;
 	width: 100%;
 	text-align: center;
-	font-size: 1.5vw;
+	font-size: 1.7vw;
 }
 
 .landing-my-pic{
-	width: 12%;
+	width: 14%;
 	height: auto;
 	position: absolute;
 	left: 43%;
@@ -108,6 +105,12 @@ h2.ui.header{
 	color: white;
 	font-size: 1.4em;
 	margin-bottom: 1%;
+}
+
+.landing-header{
+	/* color: red !important; */
+	/* font-style: oblique; */
+	font-family: 'Carrois Gothic SC' !important;
 }
 
 

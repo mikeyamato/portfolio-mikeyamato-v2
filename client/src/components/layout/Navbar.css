@@ -27,9 +27,12 @@
 	/* vertical-align: middle; */
 	/* padding-right: .1em !important; */
 	max-height: 23px;
+}
 
+.navbar-menu{
+	background-color: rgb(27, 28, 29) !important;
 }
 
 a:link,a:visited,a:hover,a:active{
-	color: black !important;
+	/* color: white !important; */
 }

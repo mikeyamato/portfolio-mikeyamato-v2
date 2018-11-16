@@ -6,8 +6,8 @@ const ConfettiTime = (props) => {
 	return (
 		<div >
 			<Confetti 
-				width={'2000%'}
-				height={'1500%'}
+				width={props.width}
+				height={props.height}
 				run={props.run}
 			/>
 		</div>

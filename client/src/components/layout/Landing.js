@@ -3,7 +3,6 @@ import { Grid, Container, Image, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 
-
 import Img from 'react-image';
 import Konami from 'react-konami-code';
 import Sound from 'react-sound';
@@ -44,6 +43,10 @@ class Landing extends Component {
 			}, 4000)
 		}
 	}
+
+	// componentDidMount() {
+	// 	window.scrollTo(0, 0);  // helps with having the page open at the top
+	// }
 
 	oneUp() {
 		// console.log('this got called')
@@ -96,7 +99,7 @@ class Landing extends Component {
 								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
 									<Grid.Column width={8}>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>ABOUT</Header>
+											<Header as='h2' className='landing-header'>About</Header>
 										</FadeIn>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
 											<p>
@@ -119,7 +122,7 @@ class Landing extends Component {
 									</Grid.Column>
 									<Grid.Column width={8}>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>PROJECTS</Header>
+											<Header as='h2' className='landing-header'>Projects</Header>
 										</FadeIn>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
 											<p>
@@ -139,7 +142,7 @@ class Landing extends Component {
 								<Grid.Row centered columns={2} verticalAlign='middle' className='landing-paragraph'>
 									<Grid.Column width={8}>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>MORE</Header>
+											<Header as='h2' className='landing-header'>More</Header>
 										</FadeIn>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
 											<p>

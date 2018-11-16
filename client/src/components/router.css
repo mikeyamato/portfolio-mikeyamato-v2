@@ -1,0 +1,21 @@
+
+
+/* .router-site{
+	display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.router-site-content{
+    flex: 1 0 auto;
+    padding: var( — space) var( — space) 0;
+    width: 100%;
+}
+
+.router-site-content:after {
+    content: ‘\00a0’;
+    display: block;
+    margin-top: var( — space);
+    height: 0;
+    visibility: hidden;
+} */
