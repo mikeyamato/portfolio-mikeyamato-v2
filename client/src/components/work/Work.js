@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Modal, Header, Container, Card, Image, Grid, Divider, Embed, Placeholder } from 'semantic-ui-react';
+import { Button, Modal, Container, Card, Image, Grid, Divider, Icon,  Dimmer, Loader } from 'semantic-ui-react';
 import Konami from 'react-konami-code';
 import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
-// import Videos from './Videos';
+import Videos from './Videos';
+import { withRouter } from 'react-router-dom';
+
 import './work.css';
 
 // next iteration, randomly pick a video
@@ -13,7 +15,7 @@ class Work extends Component {
 	state = { 
 		active: '',
 		sound: Sound.status.STOPPED,
-		loader: true
+		loader: true,
 	}
 
 	oneUp = this.oneUp.bind(this);
@@ -25,24 +27,20 @@ class Work extends Component {
 			active: true
 		})
 	}
-
+	
 	componentDidUpdate() {
 		if (this.state.sound === Sound.status.PLAYING) {
 			setTimeout(()=>{
 				this.setState({ sound: Sound.status.STOPPED  })
-				console.log('component updated')
+				// console.log('component updated')
 			}, 1000)
 		}
 	}
-
 	
-	// componentDidMount() {
-	// 	window.scrollTo(0, 0);  // helps with having the page open at the top
-	// }
-
 	render() {
-		const { active, sound } = this.state
-
+		const { active, sound, loader } = this.state
+		// console.log('######', this.state.active)
+		
 		return (
 
 			<div className='work'>
@@ -61,7 +59,9 @@ class Work extends Component {
 								{/* // TODO: optimize this so I'm creating 1 component but then only updating images and href */}
 								<Grid.Row centered columns={4}>
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image 
 													src='https://i.imgur.com/T50nUls.png' 
@@ -77,11 +77,15 @@ class Work extends Component {
 											</Card>
 										} dimmer={'blurring'} >
 											<Modal.Header>Groupr</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image
 													className='work-card-modal-image'
 													size='large' 
 													src='https://i.imgur.com/GCdavJR.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Hub for high quality tech networking events. Built using the MERN stack.</Header> */}
@@ -92,12 +96,14 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
+													color='black' 
 													href='https://github.com/ARKrew/groupr'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
-													Visit Repository
+													<Icon size={'big'} name='github square' />
+													Explore
 												</Button>
 											</Modal.Actions>
 										</Modal>
@@ -105,7 +111,9 @@ class Work extends Component {
 								
 								
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image
 													className='work-card-image-argo'
@@ -120,12 +128,16 @@ class Work extends Component {
 											</Card>
 										} dimmer={'blurring'} >
 											<Modal.Header>ARgo</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image 
 													className='work-card-modal-image'
 													verticalAlign='middle' 
 													size='medium' 
 													src='https://i.imgur.com/652HhKs.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Default Profile Image</Header> */}
@@ -135,11 +147,13 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
+													color='black' 
 													href='https://github.com/ARKrew/workingArgo'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
+													<Icon size={'big'} name='github square' />
 													Explore
 												</Button>
 											</Modal.Actions>
@@ -148,24 +162,30 @@ class Work extends Component {
 
 
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image 
 													src='https://i.imgur.com/vcETggk.png'
 													label={{ color: 'black', content: 'Website', icon: 'computer', ribbon: true }}
 												/>
 												<Card.Content>
-													<Card.Header className='work-card-header' >Devevloper Konnector</Card.Header>
+													<Card.Header className='work-card-header' >Dev Konnector</Card.Header>
 													<Card.Description>A network made by a developer for developers.</Card.Description>
 												</Card.Content>
 											</Card>
 										} dimmer={'blurring'} >
-											<Modal.Header>Devevloper Konnector</Modal.Header>
+											<Modal.Header>Dev Konnector</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image 
 													className='work-card-modal-image'
 													size='large' 
 													src='https://i.imgur.com/Ptgmgh3.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Default Profile Image</Header> */}
@@ -174,11 +194,13 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
+													color='black' 
 													href='https://github.com/mikeyamato/DevKonnector'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
+													<Icon size={'big'} name='github square' />
 													Explore
 												</Button>
 											</Modal.Actions>
@@ -194,7 +216,9 @@ class Work extends Component {
 								
 								
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image 
 													src='https://i.imgur.com/Hy9jkxL.png'
@@ -207,29 +231,32 @@ class Work extends Component {
 											</Card>
 										} dimmer={'blurring'} >
 											<Modal.Header>GiftHub - Twitter/Watson Personality Insights</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image 
 													className='work-card-modal-image'
 													size='large' 
 													src='https://i.imgur.com/tHeXysv.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Default Profile Image</Header> */}
 													<p>Struggling to find the gifts for your friends and family? Use Gifthub to find the perfect gift!</p>
-													<ul>
-														<li>
-															Analyze twitter feeds for gift recommendations based on IBM Watson's Personality Insights. Predict personality characteristics, needs and values through twitter feeds. Understand your loved ones habits and preferences on an individual level, and at scale.
-														</li>
-													</ul>
+													<p>Analyze twitter feeds for gift recommendations based on IBM Watson's Personality Insights. Predict personality characteristics, needs and values through twitter feeds. Understand your loved ones habits and preferences on an individual level, and at scale.
+													</p>
 												</Modal.Description>
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
-													href='https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350'  
+													color='black' 
+													href='https://github.com/UCLA-Hackers/twitter-watson-personality-insights'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
+													<Icon size={'big'} name='github square' />
 													Explore
 												</Button>
 											</Modal.Actions>
@@ -238,7 +265,9 @@ class Work extends Component {
 
 
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image 
 													src='https://i.imgur.com/CmJNnfp.png'
@@ -251,11 +280,15 @@ class Work extends Component {
 											</Card>
 										} dimmer={'blurring'} >
 											<Modal.Header>Slackbot Fist-to-Five</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image 
 													className='work-card-modal-image'
 													size='large' 
 													src='https://i.imgur.com/o9RfCiA.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Default Profile Image</Header> */}
@@ -264,11 +297,13 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
+													color='black' 
 													href='https://github.com/mikeyamato/slackbot-fist-to-five-oauth'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
+													<Icon size={'big'} name='github square' />
 													Explore
 												</Button>
 											</Modal.Actions>
@@ -276,7 +311,9 @@ class Work extends Component {
 									</Grid.Column>
 
 									<Grid.Column>
-										<Modal trigger={
+										<Modal 
+											onClose={() => this.setState({ loader: true })}
+											trigger={
 											<Card fluid>
 												<Image 
 													src='https://i.imgur.com/zB63e4X.png' 
@@ -289,11 +326,15 @@ class Work extends Component {
 											</Card>
 										} dimmer={'blurring'} >
 											<Modal.Header>Slackbot Random Victim Finder</Modal.Header>
+											<Dimmer active={loader} inverted>
+												<Loader />
+											</Dimmer>
 											<Modal.Content image>
 												<Image 
 													className='work-card-modal-image'
 													size='large' 
 													src='https://i.imgur.com/QRVLJQr.gif'
+													onLoad={() => this.setState({ loader: false })}
 												/>
 												<Modal.Description className='work-modal-desc'>
 													{/* <Header>Default Profile Image</Header> */}
@@ -303,11 +344,13 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
-													color='violet' 
+													color='black' 
 													href='https://github.com/mikeyamato/slackbot-random-victim-finder'  
 													rel="noopener noreferrer" 
 													target="_blank"
+													className='work-button'
 												>
+													<Icon size={'big'} name='github square' />
 													Explore
 												</Button>
 											</Modal.Actions>
@@ -327,12 +370,12 @@ class Work extends Component {
 											<Divider horizontal className='work-divider'>
 												Easter Egg
 											</Divider>
-											{/* <Videos active={active}/> */}
-											<Embed 
+											<Videos active={active}/>
+											{/* <Embed 
 												active={active} 
 												id='FTQbiNvZqaY' 
 												source='youtube' 
-											/>
+											/> */}
 										</Konami>
 									</Grid.Column>
 								</Grid.Row>
@@ -545,4 +588,4 @@ class Work extends Component {
 	}
 }
 
-export default Work;
+export default withRouter(Work);

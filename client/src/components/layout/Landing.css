@@ -113,6 +113,9 @@ h2.ui.header{
 	font-family: 'Carrois Gothic SC' !important;
 }
 
+.landing-button{
+	font-family: 'Cagliostro' !important;
+}
 
 /* for modal. but this affects all modals*/
 /* .ui.dimmer{

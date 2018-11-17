@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Container, Image, Header, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Grid, Container, Image, Header, Button, Transition } from 'semantic-ui-react';
+import { Link, withRouter } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 
 import Img from 'react-image';
@@ -17,6 +17,9 @@ class Landing extends Component {
 		sound: Sound.status.STOPPED,
 		delay: 5500,
 		transitionDuration: 2000,
+		visible1: true,
+		visible2: true,
+
 
 		// transitionTimeTitle: 2500,
 		// transitionTimeBody: 1000,
@@ -55,8 +58,12 @@ class Landing extends Component {
 		})
 	}
 
+	toggleVisibility1 = () => this.setState({ visible1: !this.state.visible1 })
+	toggleVisibility2 = () => this.setState({ visible2: !this.state.visible2 })
+
+
 	render() {
-		const { delay, transitionDuration } = this.state;
+		const { delay, transitionDuration, visible1, visible2 } = this.state;
 
 		return (
 			<div className='landing'>
@@ -109,7 +116,11 @@ class Landing extends Component {
 									</Grid.Column>
 									<Grid.Column width={2}>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Image src={require('../../assets/logos/react.svg')} size='small' />
+											<Transition animation={'pulse'} duration={600} visible={visible1}>
+												<div onClick={this.toggleVisibility1}>
+													<Image src={'https://i.imgur.com/Zwj1YOO.png'} size='small' />
+												</div>
+											</Transition>
 										</FadeIn>
 									</Grid.Column>
 								</Grid.Row>
@@ -117,7 +128,11 @@ class Landing extends Component {
 								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
 									<Grid.Column width={2}>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Image src={require('../../assets/logos/react.svg')} size='small' />
+											<Transition animation={'pulse'} duration={600} visible={visible2}>
+												<div onClick={this.toggleVisibility2}>
+													<Image src={'https://i.imgur.com/3NKuNG5.png'} size='small' />
+												</div>
+											</Transition>
 										</FadeIn>
 									</Grid.Column>
 									<Grid.Column width={8}>
@@ -131,6 +146,7 @@ class Landing extends Component {
 										</FadeIn>
 									</Grid.Column>
 								</Grid.Row>
+
 								<Konami 
 									timeout={2500}
 									action={this.oneUp}
@@ -154,10 +170,10 @@ class Landing extends Component {
 								<Grid.Row centered columns={2} verticalAlign='middle'>
 									<Link to='/work'>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-										<Button type='button' animated='fade'>
-											<Button.Content visible>Learn More</Button.Content>
-											<Button.Content hidden>Learn More</Button.Content>
-										</Button>
+											<Button className='landing-button' type='button' animated='fade' color='grey' >
+												<Button.Content visible>Learn More</Button.Content>
+												<Button.Content hidden>Learn More</Button.Content>
+											</Button>
 										</FadeIn>
 									</Link>
 								</Grid.Row>
@@ -170,6 +186,6 @@ class Landing extends Component {
 	}
 }
 
-export default Landing;
+export default withRouter(Landing);
 
 // https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/HomepageLayout.js

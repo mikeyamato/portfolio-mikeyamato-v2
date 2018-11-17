@@ -6,7 +6,7 @@ import './footer.css';
 class Footer extends Component {
 	render() {
 		return (
-			<Segment className='footer-position' inverted vertical style={{ padding: '5em 0em' }}>
+			<Segment className='footer-position' inverted vertical > 
         <Container>
           <Grid divided inverted stackable>
             <Grid.Row centered>

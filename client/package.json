@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "braintree-dropin-react": "^0.1.1",
+    "braintree-web-drop-in": "^1.14.1",
+    "braintree-web-drop-in-react": "^1.0.5",
     "react": "^16.6.0",
     "react-animations": "^1.0.0",
     "react-confetti": "^2.3.0",

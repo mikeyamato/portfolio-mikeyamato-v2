@@ -1,4 +1,4 @@
-
+/* @import url('https://fonts.googleapis.com/css?family=Cagliostro'); */
 
 
 .contact{
@@ -43,7 +43,11 @@
 }
 
 .contact-desc{
+	font-family: 'Cagliostro' !important;
 	color: white !important;
+	font-size: 1.7em !important;
+	font-weight: normal !important;
+	margin-bottom: 2% !important;
 }
 
 .contact-phone{
@@ -75,7 +79,31 @@
 	color: #4183c4 !important;
 }
 
+.contact-form{
+	/* margin-top: 20% !important;  */
+	/* margin-left: 20% !important; */
+}
+
 .contact-iframe{
 	width: 100vw;
 	height: 100vh;
+}
+
+.contact-modal-header-row,.contact-modal-action{
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.contact-modal-header{
+	color: white !important;
+}
+
+.contact-modal-grid{
+	display: flex !important;
+	justify-content: center !important;
+	margin-bottom: 1% !important;
+}
+
+.contact-modal-header,.contact-modal-button{
+	font-family: 'Cagliostro' !important;
 }
