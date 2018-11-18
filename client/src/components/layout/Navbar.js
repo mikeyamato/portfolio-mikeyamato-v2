@@ -10,7 +10,6 @@ class Navbar extends Component {
     // pathname: '/',  // remove after testing
   }
 
-  
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
   render() {

@@ -4,7 +4,7 @@
 .login{
 	background-image: url('../../assets/images/background/goldfish.jpg');
 	/* background-repeat: repeat-y; */
-	height: 100vh;
+	min-height: 100vh;
 	/* background-size: auto; */
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
@@ -17,7 +17,6 @@
 
 .login-overlay{
 	background-color: rgba(0, 0, 0, 0.5);
-	position: absolute;
 	/* height: 100vh; */
 	top: 0;
 	bottom: 0;

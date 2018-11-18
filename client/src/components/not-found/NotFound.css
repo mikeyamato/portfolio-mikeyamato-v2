@@ -1,0 +1,52 @@
+.not-found{
+	background-color: white;
+	/* background-repeat: repeat-y; */
+	min-height: 100vh;
+	background-size: auto;
+	/* background-repeat: repeat; */
+	/* background-position: center center; */
+	/* z-index: -10; */
+	position: relative;
+	top: 0;
+	bottom: 0;
+}
+
+.not-found-overlay{
+	/* background-color: rgba(0, 0, 0, 0.5); */
+	/* position: absolute; */
+	/* height: 100vh; */
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	/* z-index: -5; */
+}
+
+.not-found-sorry-row{
+	margin-top: 15% !important;
+
+}
+
+.not-found-sorry-column{
+}
+
+.not-found-sorry-img{
+	z-index: 1;
+}
+
+.not-found-404-row{
+	margin-top: 12% !important;
+	/* margin-top: -10.5% !important; */
+
+}
+
+.not-found-404-column{
+}
+
+.not-found-404-img{
+	z-index: 2;
+}
+
+.not-found-grid{
+	margin-bottom: 5% !important;
+}

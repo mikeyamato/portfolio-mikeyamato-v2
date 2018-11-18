@@ -16,7 +16,7 @@ h2.ui.header{
 	flex: 1;
 	background-image: url('../../assets/images/background/black-japanese-wave-gold-line.jpg');
 	/* background-repeat: repeat-y; */
-	min-height: 170vh;
+	min-height: 100vh;
 	/* height: 170vh; */
 	background-size: auto;
 	/* background-repeat: repeat; */
@@ -30,7 +30,9 @@ h2.ui.header{
 
 .landing-overlay{
 	background-color: rgba(0, 0, 0, 0.7);
-	position: absolute;
+	
+	/* position: absolute; */
+
 	/* height: 100vh; */
 	top: 0;
 	bottom: 0;
@@ -115,6 +117,10 @@ h2.ui.header{
 
 .landing-button{
 	font-family: 'Cagliostro' !important;
+}
+
+.landing-button-row{
+	margin-bottom: 5% !important;
 }
 
 /* for modal. but this affects all modals*/

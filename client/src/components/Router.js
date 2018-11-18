@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux' // this helps bind the meeting point for the front end (Router.js). this helps provide the 'store' which hold the application state and needs to wrap around everything.  
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -30,14 +30,16 @@ class Router extends Component {
 					<div className='router-main'>
 						<Navbar />
 							<ScrollToTop>
-								<Route exact path='/' component={ Landing } />
-								<Route exact path='/work' component={ Work } />
-								<Route exact path='/contact' component={ Contact } />
-								<Route exact path='/payment' component={ Payment } />
-								<Route exact path='/resources' component={ Resources } />
-								<Route exact path='/signup' component={ Signup } />
-								<Route exact path='/login' component={ Login } />
-								<Route exact path='/not-found' component={ NotFound } />
+								<Switch>
+									<Route exact path='/' component={ Landing } />
+									<Route exact path='/work' component={ Work } />
+									<Route exact path='/contact' component={ Contact } />
+									<Route exact path='/payment' component={ Payment } />
+									<Route exact path='/resources' component={ Resources } />
+									<Route exact path='/signup' component={ Signup } />
+									<Route exact path='/login' component={ Login } />
+									<Route component={ NotFound } />  {/* catch all for any path not listed */}
+								</Switch>
 							</ScrollToTop>
 						<Footer />
 					</div>

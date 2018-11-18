@@ -387,7 +387,7 @@ class Work extends Component {
 							<Divider horizontal className='work-divider'>
 								Technologies
 							</Divider>
-							<Grid >
+							<Grid className='work-grid-logo'>
 								<Grid.Row centered columns={6} className='work-grid-row' >
 									<Grid.Column>
 										<Image 

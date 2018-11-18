@@ -4,7 +4,7 @@
 .work{
 	background-image: url('../../assets/images/background/japanese-seamless-pattern-cut-out.jpg');
 	/* background-repeat: repeat-y; */
-	min-height: 160vh;
+	min-height: 100vh;
 	/* height: 190vh; */
 	background-size: auto;
 	/* background-repeat: repeat; */
@@ -18,7 +18,9 @@
 
 .work-overlay{
 	background-color: rgba(255, 255, 255, 0.7);
-	position: absolute;
+	
+	/* position: absolute; */
+
 	/* height: 100vh; */
 	top: 0;
 	bottom: 0;
@@ -99,4 +101,8 @@
 
 .work-button{
 	font-family: 'Cagliostro' !important;
+}
+
+.work-grid-logo{
+	margin-bottom: 5% !important;
 }

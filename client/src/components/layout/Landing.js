@@ -90,7 +90,7 @@ class Landing extends Component {
 								<Grid.Column >
 									<RevealText 
 										show={this.state.showTitle} 
-										text={'Software Engineer / Problem Solver Extraordinaire'} 
+										text={'Software Engineer / Solutions Engineer'} 
 									/>
 								</Grid.Column>
 							</Grid.Row>
@@ -167,7 +167,7 @@ class Landing extends Component {
 										</FadeIn>
 									</Grid.Column>
 								</Grid.Row>
-								<Grid.Row centered columns={2} verticalAlign='middle'>
+								<Grid.Row centered columns={2} verticalAlign='middle' className='landing-button-row'>
 									<Link to='/work'>
 										<FadeIn delay={delay} transitionDuration={transitionDuration}>
 											<Button className='landing-button' type='button' animated='fade' color='grey' >

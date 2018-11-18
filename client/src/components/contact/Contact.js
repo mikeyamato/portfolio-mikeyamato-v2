@@ -106,7 +106,7 @@ class Contact extends Component {
 
 					<Container>
 						<Grid>
-							<Grid.Row className='contact-grid' centered columns={2}>  {/* NOTE: to center, add one extra column */}
+							<Grid.Row className='contact-grid-row' centered columns={2}>  {/* NOTE: to center, add one extra column */}
 								<Grid.Column>
 									<div className='contact-title'>
 										CONTACT
@@ -123,7 +123,7 @@ class Contact extends Component {
 									</Header>
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row centered columns={3} >
+							<Grid.Row centered columns={3} className='contact-grid-row-entries'>
 								<Divider vertical></Divider>
 								<Grid.Column className='contact-left-column'>
 									<Container className='contact-left-copy'>
@@ -189,8 +189,7 @@ class Contact extends Component {
 												</List.Content>
 											</List.Item>
 										</List>
-										{/* <Segment color='grey' vertical className='contact-left-copy'>Pellentesque habitant morbi tristique senectus.</Segment>
-										<Segment color='grey' vertical className='contact-left-copy'>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id.</Segment> */}
+										
 									</Container>
 								</Grid.Column>
 

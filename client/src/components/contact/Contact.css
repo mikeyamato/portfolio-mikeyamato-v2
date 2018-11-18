@@ -4,7 +4,7 @@
 .contact{
 	background-image: url('../../assets/images/background/umbrella.png');
 	/* background-repeat: repeat-y; */
-	height: 100vh;
+	min-height: 100vh;
 	background-size: auto;
 	/* background-repeat: repeat; */
 	/* background-position: center center; */
@@ -17,7 +17,9 @@
 
 .contact-overlay{
 	background-color: rgba(0, 0, 0, 0.6);
-	position: absolute;
+	
+	/* position: absolute; */
+	
 	/* height: 100vh; */
 	top: 0;
 	bottom: 0;
@@ -26,7 +28,8 @@
 	/* z-index: -5; */
 }
 
-.contact-grid{
+
+.contact-grid-row{
 	margin-top: 9%;
 	margin-bottom: 2%;
 }
@@ -106,4 +109,8 @@
 
 .contact-modal-header,.contact-modal-button{
 	font-family: 'Cagliostro' !important;
+}
+
+.contact-grid-row-entries{
+	margin-bottom: 5% !important;
 }
