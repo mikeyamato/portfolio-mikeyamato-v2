@@ -40,51 +40,61 @@ class Login extends Component {
 			<div className='login'>
 				<div className='login-overlay'>
 					<Container>
-						<div className='login-title'>
-							Login
-						</div>
-						<Grid centered columns={2}>
-							<Grid.Column>
-								<Form noValidate onSubmit={this.onSubmit} error>
-									<Form.Input required
-										label='Email'
-										type='email'
-										placeholder='email' 
-										name='email'
-										value={this.state.email} 
-										onChange={this.onChange}
-									/>
-									{errors.email && (
-										<Message
-											error
-											content={errors.email}
+						<Grid >
+							<Grid.Row className='login-grid-row-title' centered columns={2}>
+								<Grid.Column>
+									<div className='login-title'>
+										LOGIN
+									</div>
+								</Grid.Column>
+							</Grid.Row>
+
+							<Grid.Row centered columns={2} className='login-grid-form'>
+								<Grid.Column>
+									<Form noValidate onSubmit={this.onSubmit} error>
+										<Form.Input required
+											label='Email'
+											type='email'
+											placeholder='email' 
+											name='email'
+											value={this.state.email} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Form.Input required
-										label='Password'
-										type='password'
-										placeholder='Password' 
-										name='password'
-										value={this.state.password} 
-										onChange={this.onChange}
-									/>
-									{errors.password && (
-										<Message
-											error
-											content={errors.password}
+										{errors.email && (
+											<Message
+												error
+												content={errors.email}
+											/>
+										)}
+										<Form.Input required
+											label='Password'
+											type='password'
+											placeholder='Password' 
+											name='password'
+											value={this.state.password} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Button 
-										type='submit'
-										disabled={
-											!this.state.email ||
-											!this.state.password
-										}
-									>
-										Submit
-									</Button>
-								</Form>
-							</Grid.Column>
+										{errors.password && (
+											<Message
+												error
+												content={errors.password}
+											/>
+										)}
+										</Form>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={2} verticalAlign='middle'>
+								<Button 
+									className='login-button'
+									type='submit'
+									disabled={
+										!this.state.email ||
+										!this.state.password
+									}
+								>
+									Submit
+								</Button>
+							</Grid.Row>
 						</Grid>
 					</Container>
 				</div>

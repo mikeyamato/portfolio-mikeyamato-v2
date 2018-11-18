@@ -296,6 +296,7 @@ class Contact extends Component {
 										<Modal dimmer={'blurring'} trigger={
 											<Button 
 												// fluid
+												className='contact-modal-button'
 												floated='right'
 												type='submit'
 												disabled={
@@ -317,7 +318,7 @@ class Contact extends Component {
 										>
 											<Grid >
 												<Grid.Row className='contact-modal-grid' >
-													<Icon size={'big'} name='paper plane' />
+													<Icon size={'huge'} name='paper plane' />
 												</Grid.Row>
 												<Grid.Row className='contact-modal-header-row' >
 													<Header className='contact-modal-header' content='Thank you. Your information has been delivered!' />

@@ -17,12 +17,17 @@
 
 .payment-overlay{
 	background-color: rgba(0, 0, 0, 0.5);
-	/* height: 100vh; */
+	min-height: 100vh;
 	top: 0;
 	bottom: 0;
 	height: 100%;
 	width: 100%;
 	/* z-index: -5; */
+}
+
+.payment-grid-row-title{
+	margin-top: 9%;
+	margin-bottom: 2%;
 }
 
 .payment-title{
@@ -33,5 +38,5 @@
 	top: 40%;
 	width: 100%;
 	text-align: center;
-	font-size: 2em;
+	font-size: 3em;
 }

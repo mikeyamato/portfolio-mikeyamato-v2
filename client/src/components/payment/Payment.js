@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, Container, Grid } from 'semantic-ui-react';
 import braintree from 'braintree-web-drop-in';  // these two go together
 import BraintreeDropin from 'braintree-dropin-react';  // these two go together
 import DropIn from "braintree-web-drop-in-react";  // alternative
@@ -9,9 +10,17 @@ class Payment extends Component {
 		return (
 			<div className='payment'>
 				<div className='payment-overlay'>
-					<div className='payment-title'>
-						Payment
-					</div>
+					<Container>
+						<Grid>
+							<Grid.Row className='payment-grid-row-title' centered columns={2}>
+								<Grid.Column>
+									<div className='payment-title'>
+										PAYMENT
+									</div>
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>
+					</Container>
 				</div>
 			</div>
 		)

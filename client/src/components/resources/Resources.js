@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image, Container, Grid } from 'semantic-ui-react';
 import './Resources.css';
 
 class Resources extends Component {
@@ -6,9 +7,17 @@ class Resources extends Component {
 		return (
 			<div className='resources'>
 				<div className='resources-overlay'>
-					<div className='resources-title'>
-						Resources
-					</div>
+					<Container>
+						<Grid>
+							<Grid.Row className='resources-grid-row-title' centered columns={2}>
+								<Grid.Column>
+									<div className='resources-title'>
+										RESOURCES
+									</div>
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>
+					</Container>
 				</div>
 			</div>
 		)

@@ -96,89 +96,88 @@ class Landing extends Component {
 							</Grid.Row>
 
 							
-								<Grid.Row className='landing-desc'>
-									<Grid.Column>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<p>Los Angeles based full-stack software engineer with a MERN stack background.</p>
-										</FadeIn>
-									</Grid.Column>
-								</Grid.Row>
-								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
-									<Grid.Column width={8}>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>About</Header>
-										</FadeIn>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<p>
-												While my roots are grouned in JavaScript I take great joy in learning new frameworks, packages, and languages. I am equally comfortable working on the backend as I am on the frontend. 
-											</p>
-										</FadeIn>
-									</Grid.Column>
-									<Grid.Column width={2}>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Transition animation={'pulse'} duration={600} visible={visible1}>
-												<div onClick={this.toggleVisibility1}>
-													<Image src={'https://i.imgur.com/Zwj1YOO.png'} size='small' />
-												</div>
-											</Transition>
-										</FadeIn>
-									</Grid.Column>
-								</Grid.Row>
+							<Grid.Row className='landing-desc'>
+								<Grid.Column>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<p>Los Angeles based full-stack software engineer with a MERN stack background.</p>
+									</FadeIn>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
+								<Grid.Column width={8}>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Header as='h2' className='landing-header'>About</Header>
+									</FadeIn>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<p>
+											While my roots are grouned in JavaScript I take great joy in learning new frameworks, packages, and languages. I am equally comfortable working on the backend as I am on the frontend. 
+										</p>
+									</FadeIn>
+								</Grid.Column>
+								<Grid.Column width={2}>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Transition animation={'pulse'} duration={600} visible={visible1}>
+											<div onClick={this.toggleVisibility1}>
+												<Image src={'https://i.imgur.com/Zwj1YOO.png'} size='small' />
+											</div>
+										</Transition>
+									</FadeIn>
+								</Grid.Column>
+							</Grid.Row>
 
-								<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
-									<Grid.Column width={2}>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Transition animation={'pulse'} duration={600} visible={visible2}>
-												<div onClick={this.toggleVisibility2}>
-													<Image src={'https://i.imgur.com/3NKuNG5.png'} size='small' />
-												</div>
-											</Transition>
-										</FadeIn>
-									</Grid.Column>
-									<Grid.Column width={8}>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>Projects</Header>
-										</FadeIn>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<p>
-												I've been fortunate enough to work on awesome projects ranging from creating a Slackbot to an augmented reality mobile application.
-											</p>
-										</FadeIn>
-									</Grid.Column>
-								</Grid.Row>
+							<Grid.Row centered columns={3} verticalAlign='middle' className='landing-paragraph' >
+								<Grid.Column width={2}>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Transition animation={'pulse'} duration={600} visible={visible2}>
+											<div onClick={this.toggleVisibility2}>
+												<Image src={'https://i.imgur.com/3NKuNG5.png'} size='small' />
+											</div>
+										</Transition>
+									</FadeIn>
+								</Grid.Column>
+								<Grid.Column width={8}>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Header as='h2' className='landing-header'>Projects</Header>
+									</FadeIn>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<p>
+											I've been fortunate enough to work on awesome projects ranging from creating a Slackbot to an augmented reality mobile application.
+										</p>
+									</FadeIn>
+								</Grid.Column>
+							</Grid.Row>
 
-								<Konami 
-									timeout={2500}
-									action={this.oneUp}
-								>
-									<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-my-pic' />
-									<OneUp playStatus={this.state.sound}/>
-								</Konami>
+							<Konami 
+								timeout={2500}
+								action={this.oneUp}
+							>
+								<Img src={'https://i.imgur.com/AQYcb1x.png'} className='landing-my-pic' />
+								<OneUp playStatus={this.state.sound}/>
+							</Konami>
 
-								<Grid.Row centered columns={2} verticalAlign='middle' className='landing-paragraph'>
-									<Grid.Column width={8}>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Header as='h2' className='landing-header'>More</Header>
-										</FadeIn>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<p>
-												Click the button below to find out more about the work I've done, how to contact me, and more!  
-											</p>
-										</FadeIn>
-									</Grid.Column>
-								</Grid.Row>
-								<Grid.Row centered columns={2} verticalAlign='middle' className='landing-button-row'>
-									<Link to='/work'>
-										<FadeIn delay={delay} transitionDuration={transitionDuration}>
-											<Button className='landing-button' type='button' animated='fade' color='grey' >
-												<Button.Content visible>Learn More</Button.Content>
-												<Button.Content hidden>Learn More</Button.Content>
-											</Button>
-										</FadeIn>
-									</Link>
-								</Grid.Row>
+							<Grid.Row centered columns={2} verticalAlign='middle' className='landing-paragraph'>
+								<Grid.Column width={8}>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Header as='h2' className='landing-header'>More</Header>
+									</FadeIn>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<p>
+											Click the button below to find out more about the work I've done, how to contact me, and more!  
+										</p>
+									</FadeIn>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={2} verticalAlign='middle' className='landing-button-row'>
+								<Link to='/work'>
+									<FadeIn delay={delay} transitionDuration={transitionDuration}>
+										<Button className='landing-button' type='button' animated='fade' color='grey' >
+											<Button.Content visible>Learn More</Button.Content>
+											<Button.Content hidden>Learn More</Button.Content>
+										</Button>
+									</FadeIn>
+								</Link>
+							</Grid.Row>
 						</Grid>
-
 					</Container>
 				</div>
 			</div>

@@ -56,81 +56,89 @@ class Signup extends Component {
 			<div className='signup' >
 				<div className='signup-overlay'>
 					<Container>
-						<div className='signup-title'>
-							Signup
-						</div>
-						<Grid centered columns={2}>
-							<Grid.Column>
-								<Form noValidate onSubmit={this.onSubmit} error>
-									<Form.Input required 
-										label='Nickname'
-										type='text'
-										placeholder='nickname' 
-										name='name'
-										value={this.state.name} 
-										onChange={this.onChange}
-									/>
-									{errors.name && (
-										<Message
-											error
-											content={errors.name}
+						<Grid>
+							<Grid.Row className='signup-grid-row-title' centered columns={2}>
+								<Grid.Column>
+									<div className='signup-title'>
+										SIGNUP
+									</div>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={2}>
+								<Grid.Column>
+									<Form noValidate onSubmit={this.onSubmit} error>
+										<Form.Input required 
+											label='Nickname'
+											type='text'
+											placeholder='nickname' 
+											name='name'
+											value={this.state.name} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Form.Input required
-										label='Email'
-										type='email'
-										placeholder='example@email.com' 
-										name='email'
-										value={this.state.email} 
-										onChange={this.onChange}
-									/>
-									{errors.email && (
-										<Message
-											error
-											content={errors.email}
+										{errors.name && (
+											<Message
+												error
+												content={errors.name}
+											/>
+										)}
+										<Form.Input required
+											label='Email'
+											type='email'
+											placeholder='example@email.com' 
+											name='email'
+											value={this.state.email} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Form.Input required
-										label='Password'
-										type='password'
-										placeholder='password' 
-										name='password'
-										value={this.state.password} 
-										onChange={this.onChange}
-									/>
-									{errors.password && (
-										<Message
-											error
-											content={errors.password}
+										{errors.email && (
+											<Message
+												error
+												content={errors.email}
+											/>
+										)}
+										<Form.Input required
+											label='Password'
+											type='password'
+											placeholder='password' 
+											name='password'
+											value={this.state.password} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Form.Input required
-										label='Confirm Password'
-										type='password'
-										placeholder='confirm password' 
-										name='passwordConfirm'
-										value={this.state.passwordConfirm} 
-										onChange={this.onChange}
-									/>
-									{errors.passwordConfirm && (
-										<Message
-											error
-											content={errors.passwordConfirm}
+										{errors.password && (
+											<Message
+												error
+												content={errors.password}
+											/>
+										)}
+										<Form.Input required
+											label='Confirm Password'
+											type='password'
+											placeholder='confirm password' 
+											name='passwordConfirm'
+											value={this.state.passwordConfirm} 
+											onChange={this.onChange}
 										/>
-									)}
-									<Button 
-										type='submit'
-										disabled={
-											!this.state.name ||
-											!this.state.email ||
-											!this.state.password || 
-											!this.state.passwordConfirm
-										}
-									>
-										Submit
-									</Button>
-								</Form>
-							</Grid.Column>
+										{errors.passwordConfirm && (
+											<Message
+												error
+												content={errors.passwordConfirm}
+											/>
+										)}
+										</Form>
+								</Grid.Column>
+							</Grid.Row>
+							<Grid.Row centered columns={2} verticalAlign='middle'>
+								<Button 
+									type='submit'
+									disabled={
+										!this.state.name ||
+										!this.state.email ||
+										!this.state.password || 
+										!this.state.passwordConfirm
+									}
+								>
+									Submit
+								</Button>
+							</Grid.Row>
 						</Grid>
 					</Container>
 				</div>
