@@ -15,7 +15,7 @@
 }
 
 .contact-overlay{
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.7);
 	
 	/* position: absolute; */
 	
@@ -78,7 +78,7 @@
 }
 
 .contact-list-content:hover{
-	color: #4183c4 !important;
+	color: grey !important;
 }
 
 .contact-form{

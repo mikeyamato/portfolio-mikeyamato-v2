@@ -182,6 +182,7 @@ class Contact extends Component {
 															<Embed
 																defaultActive={true}
 																iframe={'https://docs.google.com/viewer?srcid=1N0NI3-Dxb5ac3qCgAYJm4Xx796XRZA-d&pid=explorer&efh=false&a=v&chrome=false&embedded=true'} className='contact-iframe'
+																source={'youtube'}  // althought this is a google doc i needed to state this was for youtube or else an error would return in the console
 															/>
 															{/* NOTE: replace id (example: `1N0NI3-Dxb5ac3qCgAYJm4Xx796XRZA-d`) */}
 														</Modal.Content>

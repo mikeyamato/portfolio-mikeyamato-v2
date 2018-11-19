@@ -33,6 +33,14 @@
 	background-color: rgb(27, 28, 29) !important;
 }
 
-a:link,a:visited,a:hover,a:active{
-	/* color: white !important; */
+span.text:hover{
+	color: grey !important;
 }
+
+/* a.active.item{
+	background: rgba(0,0,0,0) !important;
+} */
+
+/* a.inactive.item{
+	background: rgba(0,0,0,0) !important;
+} */

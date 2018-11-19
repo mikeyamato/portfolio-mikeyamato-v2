@@ -21,20 +21,23 @@ class Footer extends Component {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='Sitemap' />
                 <List link inverted>
-                  <List.Item as='a'>
-                    <Link to='/'>
-                      Home
-                    </Link>
+                  <List.Item
+                    as={Link}
+                    to='/'
+                  >
+                    Home
                   </List.Item>
-                  <List.Item as='a'>
-                    <Link to='/work'>
-                      Work
-                    </Link>
+                  <List.Item 
+                    as={Link}
+                    to='/work'
+                  >
+                    Work
                   </List.Item>
-                  <List.Item as='a'>
-                    <Link to='/contact'>
-                      Contact
-                    </Link>
+                  <List.Item 
+                    as={Link}
+                    to='/contact'
+                  >
+                    Contact
                   </List.Item>
                 </List>
               </Grid.Column>
