@@ -30,8 +30,8 @@ router.post('/request', (req ,res) => {
 
 	Contact.findOne({ email: req.body.email })
 	.then(user => {
+		errors.email = 'Looks like you have previously submitted a request. I will be in contact with you soon. Thank you. '
 		if(user){
-			errors.email = 'Looks like you have previously submitted a request. I will be in contact with you soon. Thank you. '
 			return res.status(400).json(errors);
 		} else {
 			const newContact = new Contact({

@@ -3,7 +3,7 @@ import { Message, Grid, Container, Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';  // any react properties in a component should be mapped to PropTypes
 import { connect } from 'react-redux';  // have this whenever we are using redux in a component
 import { signupUser } from '../../actions/authActions' // import the action we want to use
-import { headShake } from 'react-animations'; // need styled-components as well
+// import { headShake } from 'react-animations'; // need styled-components as well
 import './Signup.css';
 
 class Signup extends Component {

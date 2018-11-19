@@ -82,7 +82,7 @@ class Landing extends Component {
 								<Grid.Column >
 									<RevealText 
 										show={this.state.show} 
-										text={'Shinsuke \"Mike\" Yamato'} 
+										text={'Shinsuke "Mike" Yamato'} 
 									/>
 								</Grid.Column>
 							</Grid.Row>

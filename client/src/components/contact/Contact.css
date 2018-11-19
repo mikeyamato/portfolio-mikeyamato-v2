@@ -113,3 +113,12 @@
 .contact-grid-row-entries{
 	margin-bottom: 5% !important;
 }
+
+.contact-resume{
+	cursor: pointer;
+}
+
+.contact-recaptcha{
+	margin-top: 6%;
+	margin-bottom: 5%;
+}

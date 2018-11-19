@@ -12,6 +12,7 @@
     "react-confetti": "^2.3.0",
     "react-dom": "^16.6.0",
     "react-fade-in": "^0.1.6",
+    "react-google-recaptcha": "^1.0.5",
     "react-image": "^1.5.1",
     "react-konami-code": "^1.2.0",
     "react-redux": "^5.0.7",

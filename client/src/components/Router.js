@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux' // this helps bind the meeting point for the front end (Router.js). this helps provide the 'store' which hold the application state and needs to wrap around everything.  
-import { connect } from 'react-redux';
+import { Provider, connect } from 'react-redux' // this helps bind the meeting point for the front end (Router.js). this helps provide the 'store' which hold the application state and needs to wrap around everything.  
+// import { connect } from 'react-redux';
 import * as actions from '../actions';
-import store from '../store';
+// import store from '../store';
+import store from '../store2';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Landing from './layout/Landing';
@@ -16,6 +17,7 @@ import Login from './auth/Login';
 import NotFound from './not-found/NotFound';
 import ScrollToTop from './Scroll';
 import './router.css';
+
 
 class Router extends Component {
 

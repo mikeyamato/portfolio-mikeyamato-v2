@@ -38,6 +38,8 @@ class Navbar extends Component {
           this.setState({ activeItem: 'contact' })
         }
         break;
+      default:
+        break;
     }
     
     return (

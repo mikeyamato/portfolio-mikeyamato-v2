@@ -3,16 +3,17 @@ import {
 	Grid, 
 	Form, 
 	Container, 
-	Input, 
 	Button, 
 	Divider, 
 	List, 
 	Modal, 
 	Header, 
-	Icon, 
-	Embed 
+	Embed, 
+	Message
 } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
+import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import ConfettiTime from './Confetti';
 import Konami from 'react-konami-code';
@@ -25,6 +26,7 @@ import sizeMe from 'react-sizeme';
 class Contact extends Component {
 
 	state = {
+		disabled: true,
 		fname: '',
 		lname: '',
 		email: '',
@@ -47,7 +49,7 @@ class Contact extends Component {
 	onSubmit = (e) => {
 		e.preventDefault();
 
-		const user = {
+		const newContact = {
 			fname: this.state.fname,
 			lname: this.state.lname,
 			email: this.state.email,
@@ -56,7 +58,18 @@ class Contact extends Component {
 			lineNumber: this.state.lineNumber,
 			message: this.state.message
 		}
-		console.log(user)
+		console.log(newContact)
+		axios.post('/api/contact/request', newContact)
+			.then(res => console.log('*** good',res.data))
+			// .catch(err => console.log('*** bad 1', err))  // just spits out a generic error message
+			// .catch(err => console.log('*** bad 2', err.response.data))  // just spits out a generic error message
+			// .catch(err => console.log('*** bad 3', err.response.data.email))  // spits out the reason
+			.catch(err => this.setState({ errors: err.response.data }))  
+	}
+
+	// NOTE: function declaration does not work. only function expression.
+	onCheck = () => {
+		this.setState({ disabled: false })
 	}
 
 	oneUp() {
@@ -83,7 +96,7 @@ class Contact extends Component {
 	}
 
 	render() {
-		const { runConfetti, sound } = this.state;
+		const { runConfetti, sound, disabled, errors } = this.state;
 		const { width, height } = this.props.size
 
 		return (
@@ -177,7 +190,7 @@ class Contact extends Component {
 												<List.Icon name='file alternate' />
 												<List.Content verticalAlign='middle' className='contact-list-content'>
 
-													<Modal dimmer={'blurring'} trigger={<a className='contact-list-content'>Résumé</a>} >
+													<Modal dimmer={'blurring'} trigger={<div className='contact-list-content contact-resume'>Résumé</div>} >
 														<Modal.Content scrolling>
 															<Embed
 																defaultActive={true}
@@ -196,6 +209,21 @@ class Contact extends Component {
 
 								<Grid.Column>
 									<Form onSubmit={this.onSubmit} className='contact-form' >
+										{errors && 
+											(
+												<Message 
+													negative
+												>
+													<p>{errors.fname}</p>
+													<p>{errors.lname}</p>
+													<p>{errors.email}</p>
+													<p>{errors.areaCode}</p>
+													<p>{errors.centralOfficeCode}</p>
+													<p>{errors.lineNumber}</p>
+													<p>{errors.message}</p>
+												</Message>
+											)
+										}
 										<Form.Group widths='equal' >
 											<Form.Input
 												required
@@ -229,12 +257,14 @@ class Contact extends Component {
 												value={this.state.email}
 												onChange={this.onChange}
 											/>
+											
 										</Form.Group>
+										
 										{/* phone number */}
 										<Form.Group widths='equal' className='contact-phone'>  {/* inline to align row */}
-											<Form.Field required >
+											<Form.Field required>
 												<label>Phone Number</label>
-												<Input 
+												<Form.Input 
 													fluid 
 													placeholder='area code' 
 													type='tel'
@@ -243,8 +273,9 @@ class Contact extends Component {
 													onChange={this.onChange}
 												/>
 											</Form.Field>
-											<Form.Field required >
-												<Input 
+											<Form.Field  >
+												<Form.Input 
+													required
 													fluid 
 													placeholder='555' 
 													type='tel'
@@ -253,8 +284,9 @@ class Contact extends Component {
 													onChange={this.onChange}
 												/>
 											</Form.Field>
-											<Form.Field required >
-												<Input 
+											<Form.Field  >
+												<Form.Input 
+													required
 													fluid 
 													placeholder='5555' 
 													type='tel'
@@ -276,25 +308,26 @@ class Contact extends Component {
 												onChange={this.onChange}
 											/>
 										</Form.Group>
+
 										{/* button */}
-										{/* <Button 
+										
+										<ReCAPTCHA
+											sitekey='6LcbpnsUAAAAAJDO16_eklTGW0wJiRc0tOQe-lj_'
+											onChange={this.onCheck}
+											className='contact-recaptcha'
+										/>
+										<Button 
 											// fluid
 											floated='right'
 											type='submit'
 											disabled={
-												!this.state.fname ||
-												!this.state.lname ||
-												!this.state.email ||
-												!this.state.areaCode ||
-												!this.state.centralOfficeCode ||
-												!this.state.lineNumber ||
-												!this.state.message
+												disabled
 											}
 										>
 											Submit
-										</Button> */}
+										</Button>
 										
-										<Modal dimmer={'blurring'} trigger={
+										{/* <Modal dimmer={'blurring'} trigger={
 											<Button 
 												// fluid
 												className='contact-modal-button'
@@ -333,9 +366,8 @@ class Contact extends Component {
 														</Link>
 													</Modal.Actions>
 												</Grid.Row>
-
 											</Grid>
-										</Modal>
+										</Modal> */}
 
 									</Form>
 								</Grid.Column>

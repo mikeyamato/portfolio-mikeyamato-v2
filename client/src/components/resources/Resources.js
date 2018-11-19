@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Container, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import './Resources.css';
 
 class Resources extends Component {

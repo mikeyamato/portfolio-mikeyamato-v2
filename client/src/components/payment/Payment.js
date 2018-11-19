@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Image, Container, Grid } from 'semantic-ui-react';
-import braintree from 'braintree-web-drop-in';  // these two go together
-import BraintreeDropin from 'braintree-dropin-react';  // these two go together
-import DropIn from "braintree-web-drop-in-react";  // alternative
+import { Container, Grid } from 'semantic-ui-react';
+// import braintree from 'braintree-web-drop-in';  // these two go together
+// import BraintreeDropin from 'braintree-dropin-react';  // these two go together
+// import DropIn from "braintree-web-drop-in-react";  // alternative
 import './Payment.css';
 
 class Payment extends Component {

@@ -13,11 +13,11 @@ module.exports = function validateContactInput(data){
 	data.message = !isEmpty(data.message) ? data.message : '';
 
 	if(!Validator.isLength(data.fname, { min: 2, max: 30 })){
-		errors.fname = 'first name must be between 2 and 30 characters';
+		errors.fname = 'First name must be between 2 and 30 characters';
 	}
 
 	if(!Validator.isLength(data.lname, { min: 2, max: 30 })){
-		errors.lname = 'first name must be between 2 and 30 characters';
+		errors.lname = 'Last name must be between 2 and 30 characters';
 	}
 
 	// for name
@@ -63,6 +63,10 @@ module.exports = function validateContactInput(data){
 	}
 
 	if(!Validator.isInt(data.lineNumber, { min: 0000, max: 9999 })){
+		errors.lineNumber = 'Suffix must be a number';
+	}
+
+	if(!Validator.isLength(data.lineNumber, { min: 4, max: 4 })){
 		errors.lineNumber = 'Suffix must be a number';
 	}
 
