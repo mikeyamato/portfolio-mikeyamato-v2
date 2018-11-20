@@ -41,33 +41,33 @@ module.exports = function validateContactInput(data){
 
 	// for area code
 	if(Validator.isEmpty(data.areaCode)){
-		errors.areaCode = 'Area code field is required';
+		errors.areaCode = 'Phone area code field is required (i.e. 555)';
 	}
 
 	if(!Validator.isInt(data.areaCode, { min: 200, max: 999 })){
-		errors.areaCode = 'Area code must be a number';
+		errors.areaCode = 'Phone area code must be a number (i.e. 555)';
 	}
 
 	// for central office code
 	if(Validator.isEmpty(data.centralOfficeCode)){
-		errors.centralOfficeCode = 'Prefix field is required';
+		errors.centralOfficeCode = 'Phone prefix field is required (i.e. 555)';
 	}
 
 	if(!Validator.isInt(data.centralOfficeCode, { min: 200, max: 999 })){
-		errors.centralOfficeCode = 'Prefix must be a number';
+		errors.centralOfficeCode = 'Phone prefix must be a number (i.e. 555)';
 	}
 
 	// for line number
 	if(Validator.isEmpty(data.lineNumber)){
-		errors.lineNumber = 'Suffix field is required';
+		errors.lineNumber = 'Phone suffix field is required (i.e. 5555)';
 	}
 
 	if(!Validator.isInt(data.lineNumber, { min: 0000, max: 9999 })){
-		errors.lineNumber = 'Suffix must be a number';
+		errors.lineNumber = 'Phone suffix must be a number (i.e. 5555)';
 	}
 
 	if(!Validator.isLength(data.lineNumber, { min: 4, max: 4 })){
-		errors.lineNumber = 'Suffix must be a number';
+		errors.lineNumber = 'Phone suffix must be a number (i.e. 5555)';
 	}
 
 	// for message

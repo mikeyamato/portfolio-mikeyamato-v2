@@ -11,9 +11,12 @@ import {
 	Embed, 
 	Message
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { connect } from 'react-redux';
+import { newContact } from '../../actions/contactActions';
+import axios from 'axios';
 
 import ConfettiTime from './Confetti';
 import Konami from 'react-konami-code';
@@ -59,12 +62,16 @@ class Contact extends Component {
 			message: this.state.message
 		}
 		console.log(newContact)
-		axios.post('/api/contact/request', newContact)
-			.then(res => console.log('*** good',res.data))
-			// .catch(err => console.log('*** bad 1', err))  // just spits out a generic error message
-			// .catch(err => console.log('*** bad 2', err.response.data))  // just spits out a generic error message
-			// .catch(err => console.log('*** bad 3', err.response.data.email))  // spits out the reason
-			.catch(err => this.setState({ errors: err.response.data }))  
+		// axios.post('/api/contact/request', newContact)
+		// 	console.log('**** this hits')
+		// 	.then(res => console.log('*** good',res.data))
+		// 	// .catch(err => console.log('*** bad 1', err))  // just spits out a generic error message
+		// 	// .catch(err => console.log('*** bad 2', err.response.data))  // just spits out a generic error message
+		// 	// .catch(err => console.log('*** bad 3', err.response.data.email))  // spits out the reason
+		// 	.catch(err => this.setState({ errors: err.response.data }))  
+
+		this.props.newContact(newContact, this.props.history);   // inside the parens `newContact` is the variabe from above from onSubmit
+		// with `this.props.history` we can use this to redirect from the action of `this.props.newContact`
 	}
 
 	// NOTE: function declaration does not work. only function expression.
@@ -80,7 +87,7 @@ class Contact extends Component {
 		})
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(prevProps) {
 		if (this.state.sound === Sound.status.PLAYING) {
 			setTimeout(()=>{
 				this.setState({ sound: Sound.status.STOPPED  })
@@ -93,11 +100,24 @@ class Contact extends Component {
 				console.log('confetti updated')
 			}, 11000)
 		}
+
+		// this part is for redux
+		if(prevProps.errors !== this.props.errors){
+			this.setState({errors: this.props.errors});
+		}
 	}
+
+	// componentWillReceiveProps(nextProps){
+	// 	if(nextProps.errors){
+	// 		this.setState({errors: nextProps.errors})
+	// 	}
+	// }
 
 	render() {
 		const { runConfetti, sound, disabled, errors } = this.state;
 		const { width, height } = this.props.size
+
+		// const { user } = this.props.contact;
 
 		return (
 			<div className='contact'>
@@ -126,7 +146,7 @@ class Contact extends Component {
 									</div>
 								</Grid.Column>
 							</Grid.Row>
-							
+
 							<Grid.Row centered columns={1}>
 								<Grid.Column>
 									<Header textAlign='center' className='contact-desc'>
@@ -380,4 +400,16 @@ class Contact extends Component {
 	}
 }
 
-export default withRouter(sizeMe({ monitorHeight: true })(Contact));  // `sizeMe({ monitorHeight: true })` required to calculate display size 
+
+Contact.propTypes = {   // name of this component plus `propTypes`
+	newContact: PropTypes.func.isRequired,  // from above
+	contact: PropTypes.object.isRequired,  // from below
+	errors: PropTypes.object.isRequired,  // from below
+}
+
+const mapStateToProps = (state) => ({
+	contact: state.contact,   // key name can be set to anything. but the value name needs to match whats in reducers `index.js`
+	errors: state.errors
+});
+
+export default connect(mapStateToProps, { newContact } )(withRouter(sizeMe({ monitorHeight: true })(Contact)));  // `sizeMe({ monitorHeight: true })` required to calculate display size 
