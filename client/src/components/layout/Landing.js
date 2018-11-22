@@ -42,7 +42,7 @@ class Landing extends Component {
 		if (this.state.sound === Sound.status.PLAYING) {
 			setTimeout(()=>{
 				this.setState({ sound: Sound.status.STOPPED  })
-				console.log('component updated')
+				// console.log('component updated')
 			}, 4000)
 		}
 	}

@@ -62,7 +62,7 @@ class Contact extends Component {
 			lineNumber: this.state.lineNumber,
 			message: this.state.message
 		}
-		console.log(newContact)
+		// console.log(newContact)
 		// axios.post('/api/contact/request', newContact)
 		// 	console.log('**** this hits')
 		// 	.then(res => console.log('*** good',res.data))
@@ -92,13 +92,13 @@ class Contact extends Component {
 		if (this.state.sound === Sound.status.PLAYING) {
 			setTimeout(()=>{
 				this.setState({ sound: Sound.status.STOPPED  })
-				console.log('sound updated')
+				// console.log('sound updated')
 			}, 1000)
 		}
 		else if (this.state.runConfetti === true) {
 			setTimeout(()=>{
 				this.setState({ runConfetti: false })
-				console.log('confetti updated')
+				// console.log('confetti updated')
 			}, 11000)
 		}
 
@@ -108,7 +108,7 @@ class Contact extends Component {
 		}
 
 		if(prevProps.contact !== this.props.contact){
-			console.log('**** contact success');
+			// console.log('**** contact success');
 			this.setState({contact: true});
 			// return (<Modal dimmer={'blurring'} trigger={
 			// 	// TODO: set trigger
