@@ -1,32 +1,23 @@
-
+/* file named 'working'. git was automatically capitalizing file name causing */
+/* an issue when compiled on heroku */
 
 
 .work{
 	background-image: url('../../assets/images/background/japanese-seamless-pattern-cut-out.jpg');
-	/* background-repeat: repeat-y; */
 	min-height: 100vh;
-	/* height: 190vh; */
 	background-size: auto;
-	/* background-repeat: repeat; */
-	/* background-position: center center; */
-	/* z-index: -10; */
 	position: relative;
 	top: 0;
 	bottom: 0;
-
 }
 
 .work-overlay{
 	background-color: rgba(255, 255, 255, 0.7);
-	
-	/* position: absolute; */
-
 	min-height: 100vh;
 	top: 0;
 	bottom: 0;
 	height: 100%;
 	width: 100%;
-	/* z-index: -5; */
 }
 
 .work-grid{
@@ -35,7 +26,6 @@
 }
 
 .work-title{
-	/* font-family: 'Murasaki'; */
 	color: black;
 	position: absolute;
 	left: 0;
@@ -51,10 +41,6 @@
 	font-size: 1.8em !important;
 }
 
-/* height of 10% as an arbitrary number. looks the same at 20% also */
-/* img.ui.medium.middle.aligned.image{
-	height: 10%;
-} */
 
 .work-card-image-argo{
 	margin-left: auto;
@@ -75,28 +61,16 @@
 	font-style: oblique;
 }
 
-/* .work-modal-img{
-	height: 30%;
-} */
 
 .work-grid-row{
 	display: flex !important;
 	align-items: center !important;
-	/* justify-content: center !important; */
 }
 
 .work-images{
 	display: block !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	/* align-items: center !important; */
-
-
-	/* position: absolute !important;
-	top: 50% !important;
-  left: 50% !important;
-	margin-right: -50% !important;
-	transform: translate(-50%, -50%) !important; */
 }
 
 .work-button{
