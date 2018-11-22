@@ -5,7 +5,7 @@ import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
 import Videos from './Videos';
 import { withRouter } from 'react-router-dom';
-import './working.css';
+import './work.css';
 
 // next iteration, randomly pick a video
 
