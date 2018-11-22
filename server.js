@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyparser = require('body-parser');
 const passport = require('passport');
+const path = require('path');  // part of node.js
 const port = process.env.PORT || 5000; 
 const db = require('./config/keys').mongoURI;
 
@@ -30,6 +31,16 @@ app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 app.use('/api/contact', contact);
+
+// server static assets if in production
+if(process.env.NODE_ENV === 'production'){
+	// set static folder
+	app.use(express.static('client/build'));
+	// for any route that gets hit here, load index.html
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	})
+}
 
 http.createServer(app).listen(port, () => {
 	console.log(`server listening to port ${port}`);
