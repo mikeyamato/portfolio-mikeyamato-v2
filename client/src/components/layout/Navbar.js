@@ -88,7 +88,7 @@ class Navbar extends Component {
           >
             Contact
           </Menu.Item>
-          <Menu.Item 
+          {/* <Menu.Item 
             as={Link}
             to='/payment'
             name='payment' 
@@ -128,7 +128,7 @@ class Navbar extends Component {
                 />
               </Dropdown.Menu>
             </Dropdown>
-          </Menu.Menu>
+          </Menu.Menu> */}
         </Container>
       </Menu>
     )

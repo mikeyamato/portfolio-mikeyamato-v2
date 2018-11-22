@@ -9,7 +9,8 @@ import {
 	Modal, 
 	Header, 
 	Embed, 
-	Message
+	Message,
+	Icon
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
@@ -105,6 +106,37 @@ class Contact extends Component {
 		if(prevProps.errors !== this.props.errors){
 			this.setState({errors: this.props.errors});
 		}
+
+		if(prevProps.contact !== this.props.contact){
+			console.log('**** contact success');
+			this.setState({contact: true});
+			// return (<Modal dimmer={'blurring'} trigger={
+			// 	// TODO: set trigger
+			// 	prevProps.contact !== this.props.contact
+			// } 
+			// 	basic 
+			// 	size='small'
+			// 	closeOnDimmerClick={false}
+			// >
+			// 	<Grid >
+			// 		<Grid.Row className='contact-modal-grid' >
+			// 			<Icon size={'huge'} name='paper plane' />
+			// 		</Grid.Row>
+			// 		<Grid.Row className='contact-modal-header-row' >
+			// 			<Header className='contact-modal-header' content='Thank you. Your information has been delivered!' />
+			// 		</Grid.Row>
+			// 		<Grid.Row className='contact-modal-action'>
+			// 			<Modal.Actions >
+			// 				<Link to='/'>
+			// 					<Button className='contact-modal-button' type='button' color='green' inverted>
+			// 						Exit
+			// 					</Button>
+			// 				</Link>
+			// 			</Modal.Actions>
+			// 		</Grid.Row>
+			// 	</Grid>
+			// </Modal>)
+		}
 	}
 
 	// componentWillReceiveProps(nextProps){
@@ -114,7 +146,7 @@ class Contact extends Component {
 	// }
 
 	render() {
-		const { runConfetti, sound, disabled, errors } = this.state;
+		const { runConfetti, sound, disabled, errors, contact } = this.state;
 		const { width, height } = this.props.size
 
 		// const { user } = this.props.contact;
@@ -347,25 +379,11 @@ class Contact extends Component {
 											Submit
 										</Button>
 										
-										{/* <Modal dimmer={'blurring'} trigger={
-											<Button 
-												// fluid
-												className='contact-modal-button'
-												floated='right'
-												type='submit'
-												disabled={
-													!this.state.fname ||
-													!this.state.lname ||
-													!this.state.email ||
-													!this.state.areaCode ||
-													!this.state.centralOfficeCode ||
-													!this.state.lineNumber ||
-													!this.state.message
-												}
-											>
-												Submit
-											</Button>
-										} 
+
+										{contact && (
+										<Modal 
+											open={contact}
+											dimmer={'blurring'}
 											basic 
 											size='small'
 											closeOnDimmerClick={false}
@@ -387,7 +405,9 @@ class Contact extends Component {
 													</Modal.Actions>
 												</Grid.Row>
 											</Grid>
-										</Modal> */}
+										</Modal>
+										)}
+
 
 									</Form>
 								</Grid.Column>
@@ -409,7 +429,8 @@ Contact.propTypes = {   // name of this component plus `propTypes`
 
 const mapStateToProps = (state) => ({
 	contact: state.contact,   // key name can be set to anything. but the value name needs to match whats in reducers `index.js`
-	errors: state.errors
+	errors: state.errors,
+
 });
 
 export default connect(mapStateToProps, { newContact } )(withRouter(sizeMe({ monitorHeight: true })(Contact)));  // `sizeMe({ monitorHeight: true })` required to calculate display size 
