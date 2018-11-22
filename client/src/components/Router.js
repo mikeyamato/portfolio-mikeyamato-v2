@@ -4,7 +4,7 @@ import { Provider, connect } from 'react-redux' // this helps bind the meeting p
 // import { connect } from 'react-redux';
 import * as actions from '../actions';
 // import store from '../store';
-import store from '../store2';
+import store from '../store';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import Landing from './layout/Landing';

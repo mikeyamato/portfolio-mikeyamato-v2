@@ -1,15 +1,38 @@
-
-
-import { createStore, applyMiddleware, compose } from 'redux'; // `compose` allows us to use the redux chrome extension. do this by putting `applyMiddleware(...middleware)` inside `compose()`. then add the redux dev tools
-import thunk from 'redux-thunk';  // middleware 
-import rootReducer from './reducers'; 
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
 const initialState = {};
+
 const middleware = [thunk];
 
-// redux, use createStore method to create store. this helps with `store={store}`
-const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));  
-// first parameter is for the reducer. bring in the root reducer.
-// second parameter is for the initial state
+// NOTE: the following only works if Redux DevTools is installed on my browser
+// const store = createStore(
+// 	rootReducer, 
+// 	initialState, 
+// 	compose(
+// 		applyMiddleware(
+// 			...middleware
+// 		),
+// 		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// 	)
+// );
 
-export default store; 
+// NOTE: the following works on all browsers
+// https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
+const enhancers = [];
+const isDevelopment = process.env.NODE_ENV === 'development';
+if (isDevelopment && typeof window !== 'undefined' && window.devToolsExtension) {
+  enhancers.push(window.devToolsExtension());
+}
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  compose(
+    applyMiddleware(...middleware),
+    ...enhancers,
+  ),
+);
+
+export default store;
