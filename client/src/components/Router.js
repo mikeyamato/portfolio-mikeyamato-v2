@@ -30,6 +30,9 @@ class Router extends Component {
 			<Provider store={ store } > 
 				<BrowserRouter>
 					<div className='router-main'>
+						<div dangerouslySetInnerHTML={{__html: 
+							'<!-- ==> Shinsuke "Mike" Yamato || Software Engineer <== Hello and welcome to my portfolio. The frontend was built using React and Redux combined with Semantic UI styling components. The backend was built using Node, Mongoose, Passport and Plivo.  Feel free to poke around. PS, there are Easter eggs throughout the site accessible by entering the Konami code. Enjoy! -->'
+						}} />
 						<Navbar />
 							<ScrollToTop>
 								<Switch>
