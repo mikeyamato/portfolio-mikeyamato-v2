@@ -50,3 +50,10 @@
 .not-found-grid{
 	margin-bottom: 5% !important;
 }
+
+@media (max-width: 400px){
+	.not-found-grid{
+		margin-top: 20% !important;
+	}
+
+}
