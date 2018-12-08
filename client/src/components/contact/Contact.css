@@ -28,6 +28,7 @@
 }
 
 
+
 .contact-grid-row{
 	margin-top: 9%;
 	margin-bottom: 2%;
@@ -65,13 +66,16 @@
 }
 
 .contact-list{
-	margin-top: 20% !important; 
-	margin-left: 20% !important;
+	/* margin-top: 20% !important;  */
+	/* margin-left: 20% !important; */
 }
 
 .contact-list-content{
 	color:white !important;
 }
+
+
+
 
 .contact-list-content:visited,.contact-list-content:active{
 	color: white !important;
@@ -110,7 +114,11 @@
 	font-family: 'Cagliostro' !important;
 }
 
-.contact-grid-row-entries{
+.contact-grid-row-entries-top{
+	margin-bottom: 2% !important;
+}
+
+.contact-grid-row-entries-bottom{
 	margin-bottom: 5% !important;
 }
 
@@ -121,4 +129,16 @@
 .contact-recaptcha{
 	margin-top: 6%;
 	margin-bottom: 5%;
+}
+
+@media (max-width: 400px){
+	.contact-grid-row{
+		margin-top: 20%;
+		;
+	}
+
+	.contact-list-all{
+		display: inline !important;
+	}
+
 }

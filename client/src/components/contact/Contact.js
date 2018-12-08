@@ -188,15 +188,13 @@ class Contact extends Component {
 									</Header>
 								</Grid.Column>
 							</Grid.Row>
-							<Grid.Row centered columns={3} className='contact-grid-row-entries'>
-								<Divider vertical></Divider>
+							{/* <Grid.Row centered only='computer tablet' columns={3} className='contact-grid-row-entries'> */}
+							<Grid.Row centered columns={2} className='contact-grid-row-entries-top'>
+								{/* <Divider vertical></Divider> */}
 								<Grid.Column className='contact-left-column'>
-									<Container className='contact-left-copy'>
-										{/* <p>
-											Te eum doming eirmod, nominati pertinacia argumentum ad his.
-										</p> */}
+									<Container className='contact-left-copy contact-list-all'>
 										<List className='contact-list' >
-											<List.Item>
+											<List.Item >
 												<List.Icon name='phone' />
 												<List.Content verticalAlign='middle' >
 													<a href='tel:17472157826' className='contact-list-content'>
@@ -258,7 +256,8 @@ class Contact extends Component {
 										
 									</Container>
 								</Grid.Column>
-
+							</Grid.Row>
+							<Grid.Row centered columns={2} className='contact-grid-row-entries-bottom'>
 								<Grid.Column>
 									<Form onSubmit={this.onSubmit} className='contact-form' >
 										{errors && 
@@ -367,6 +366,7 @@ class Contact extends Component {
 											sitekey='6LcbpnsUAAAAAJDO16_eklTGW0wJiRc0tOQe-lj_'
 											onChange={this.onCheck}
 											className='contact-recaptcha'
+											// size='compact'
 										/>
 										<Button 
 											// fluid
@@ -412,6 +412,7 @@ class Contact extends Component {
 									</Form>
 								</Grid.Column>
 							</Grid.Row>
+							{/* </Grid.Row> */}
 						</Grid>
 					</Container>
 				</div>

@@ -47,7 +47,7 @@ class Work extends Component {
 
 
 						<Container>
-							<Grid>
+							<Grid stackable >
 								<Grid.Row className='work-grid' centered columns={2}>  {/* NOTE: to center, add one extra column */}
 									<Grid.Column>
 										<div className='work-title'>
@@ -56,7 +56,7 @@ class Work extends Component {
 									</Grid.Column>
 								</Grid.Row>
 								{/* // TODO: optimize this so I'm creating 1 component but then only updating images and href */}
-								<Grid.Row centered columns={4}>
+								<Grid.Row centered columns={4} >
 									<Grid.Column>
 										<Modal 
 											onClose={() => this.setState({ loader: true })}
@@ -118,7 +118,7 @@ class Work extends Component {
 													className='work-card-image-argo'
 													size='tiny' 
 													src='https://i.imgur.com/fBWx9cc.png' 
-													label={{ color: 'red', content: 'Mobile', icon: 'mobile alternate', ribbon: true }}
+													label={{ color: 'blue', content: 'Mobile', icon: 'mobile alternate', ribbon: true }}
 												/>
 												<Card.Content>
 													<Card.Header className='work-card-header' >ARgo</Card.Header>

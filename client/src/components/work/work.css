@@ -77,3 +77,14 @@
 .work-grid-logo{
 	margin-bottom: 5% !important;
 }
+
+@media (max-width: 400px){
+	.work-grid{
+		margin-top: 22% !important;
+		margin-bottom: 8% !important;
+	}
+	
+	.work-grid-main{
+		/* margin-top: 30% !important; */
+	}
+}
