@@ -16,6 +16,7 @@ import Signup from './auth/Signup';
 import Login from './auth/Login';
 import NotFound from './not-found/NotFound';
 import ScrollToTop from './Scroll';
+import GAListener from './GAListener';
 import './router.css';
 
 
@@ -29,25 +30,27 @@ class Router extends Component {
 		return (
 			<Provider store={ store } > 
 				<BrowserRouter>
-					<div className='router-main'>
-						<div dangerouslySetInnerHTML={{__html: 
-							'<!-- ==> Shinsuke "Mike" Yamato || Software Engineer <== Hello and welcome to my portfolio. The frontend was built using React and Redux combined with Semantic UI styling components. The backend was built using Node, Mongoose, Passport and Plivo.  Feel free to poke around. PS, there are Easter eggs throughout the site accessible by entering the Konami code. Enjoy! -->'
-						}} />
-						<Navbar />
-							<ScrollToTop>
-								<Switch>
-									<Route exact path='/' component={ Landing } />
-									<Route exact path='/work' component={ Work } />
-									<Route exact path='/contact' component={ Contact } />
-									<Route exact path='/payment' component={ Payment } />
-									<Route exact path='/resources' component={ Resources } />
-									<Route exact path='/signup' component={ Signup } />
-									<Route exact path='/login' component={ Login } />
-									<Route component={ NotFound } />  {/* catch all for any path not listed */}
-								</Switch>
-							</ScrollToTop>
-						<Footer />
-					</div>
+					<GAListener>
+						<div className='router-main'>
+							<div dangerouslySetInnerHTML={{__html: 
+								'<!-- ==> Shinsuke "Mike" Yamato || Software Engineer <== Hello and welcome to my portfolio. The frontend was built using React, Redux, Semantic UI styling components, and Google Analytics. The backend was built using Node, Mongoose, and Plivo.  Feel free to poke around. PS, there are Easter eggs sprinkled throughout the site accessible by entering the Konami code. Enjoy! -->'
+							}} />
+							<Navbar />
+								<ScrollToTop>
+									<Switch>
+										<Route exact path='/' component={ Landing } />
+										<Route exact path='/work' component={ Work } />
+										<Route exact path='/contact' component={ Contact } />
+										<Route exact path='/payment' component={ Payment } />
+										<Route exact path='/resources' component={ Resources } />
+										<Route exact path='/signup' component={ Signup } />
+										<Route exact path='/login' component={ Login } />
+										<Route component={ NotFound } />  {/* catch all for any path not listed */}
+									</Switch>
+								</ScrollToTop>
+							<Footer />
+						</div>
+					</GAListener>
 				</BrowserRouter>
 			</Provider>
 		)

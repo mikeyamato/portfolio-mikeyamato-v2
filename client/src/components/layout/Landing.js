@@ -8,6 +8,7 @@ import Konami from 'react-konami-code';
 import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
 import RevealText from './Reveal';
+import ReactGA from 'react-ga';
 import './Landing.css';
 
 class Landing extends Component {
@@ -56,11 +57,23 @@ class Landing extends Component {
 		this.setState({ 
 			sound: Sound.status.PLAYING
 		})
+		ReactGA.event({
+			category: 'Easter_Egg',
+			action: 'Landing Page Easter Egg',
+			label: '/'
+		});
+	}
+
+	buttonClick(){
+		ReactGA.event({
+			category: 'Button_Click',
+			action: 'Learn More - From "/" To "/work"',
+			label: '/'
+		});
 	}
 
 	toggleVisibility1 = () => this.setState({ visible1: !this.state.visible1 })
 	toggleVisibility2 = () => this.setState({ visible2: !this.state.visible2 })
-
 
 	render() {
 		const { delay, transitionDuration, visible1, visible2 } = this.state;
@@ -168,9 +181,9 @@ class Landing extends Component {
 								</Grid.Column>
 							</Grid.Row>
 							<Grid.Row centered columns={2} verticalAlign='middle' className='landing-button-row'>
-								<Link to='/work'>
+								<Link to='/work' onClick={this.buttonClick}>
 									<FadeIn delay={delay} transitionDuration={transitionDuration}>
-										<Button className='landing-button' type='button' animated='fade' color='grey' >
+										<Button className='landing-button' type='button' animated='fade' color='grey'>
 											<Button.Content visible>Learn More</Button.Content>
 											<Button.Content hidden>Learn More</Button.Content>
 										</Button>

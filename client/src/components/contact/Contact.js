@@ -25,6 +25,7 @@ import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
 import './Contact.css';
 import sizeMe from 'react-sizeme';
+import ReactGA from 'react-ga';
 
 
 class Contact extends Component {
@@ -86,6 +87,11 @@ class Contact extends Component {
 			sound: Sound.status.PLAYING,
 			runConfetti: true,
 		})
+		ReactGA.event({
+			category: 'Easter_Egg',
+			action: 'Contact Page Easter Egg',
+			label: '/contact'
+		});
 	}
 
 	componentDidUpdate(prevProps) {
@@ -144,6 +150,14 @@ class Contact extends Component {
 	// 		this.setState({errors: nextProps.errors})
 	// 	}
 	// }
+
+	openModal(){
+		ReactGA.event({
+			category: 'Open_Modal',
+			action: 'Looked At Resume',
+			label: '/contact'
+		});
+	}
 
 	render() {
 		const { runConfetti, sound, disabled, errors, contact } = this.state;
@@ -240,7 +254,7 @@ class Contact extends Component {
 												<List.Icon name='file alternate' />
 												<List.Content verticalAlign='middle' className='contact-list-content'>
 
-													<Modal dimmer={'blurring'} trigger={<div className='contact-list-content contact-resume'>Résumé</div>} >
+													<Modal onOpen={this.openModal} dimmer={'blurring'} trigger={<div className='contact-list-content contact-resume'>Résumé</div>} >
 														<Modal.Content scrolling>
 															<Embed
 																defaultActive={true}

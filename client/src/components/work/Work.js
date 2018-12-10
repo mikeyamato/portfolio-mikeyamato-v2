@@ -5,6 +5,7 @@ import Sound from 'react-sound';
 import OneUp from '../common/OneUp';
 import Videos from './Videos';
 import { withRouter } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import './work.css';
 
 // next iteration, randomly pick a video
@@ -25,6 +26,11 @@ class Work extends Component {
 			sound: Sound.status.PLAYING,
 			active: true
 		})
+		ReactGA.event({
+			category: 'Easter_Egg',
+			action: 'Work Page Easter Egg',
+			label: '/work'
+		});
 	}
 	
 	componentDidUpdate() {
@@ -34,6 +40,22 @@ class Work extends Component {
 				// console.log('component updated')
 			}, 1000)
 		}
+	}
+
+	openModal(page){
+		ReactGA.event({
+			category: 'Open_Modal',
+			action: page,
+			label: '/work'
+		});
+	}
+
+	toRepository(repo){
+		ReactGA.event({
+			category: 'Explore_Repo',
+			action: repo,
+			label: '/work'
+		});
 	}
 	
 	render() {
@@ -59,6 +81,7 @@ class Work extends Component {
 								<Grid.Row centered columns={4} >
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Groupr')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -95,6 +118,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Groupr')}
 													color='black' 
 													href='https://github.com/ARKrew/groupr'  
 													rel="noopener noreferrer" 
@@ -111,6 +135,7 @@ class Work extends Component {
 								
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Argo')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -146,6 +171,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Argo')}
 													color='black' 
 													href='https://github.com/ARKrew/workingArgo'  
 													rel="noopener noreferrer" 
@@ -162,6 +188,7 @@ class Work extends Component {
 
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Dev Konnector')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -193,6 +220,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Dev Konnector')}	
 													color='black' 
 													href='https://github.com/mikeyamato/DevKonnector'  
 													rel="noopener noreferrer" 
@@ -216,6 +244,7 @@ class Work extends Component {
 								
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Watson')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -249,6 +278,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Watson')}													
 													color='black' 
 													href='https://github.com/UCLA-Hackers/twitter-watson-personality-insights'  
 													rel="noopener noreferrer" 
@@ -265,6 +295,7 @@ class Work extends Component {
 
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Slackbot Fist-to-Five')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -296,6 +327,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Slackbot Fist-to-Five')}
 													color='black' 
 													href='https://github.com/mikeyamato/slackbot-fist-to-five-oauth'  
 													rel="noopener noreferrer" 
@@ -311,6 +343,7 @@ class Work extends Component {
 
 									<Grid.Column>
 										<Modal 
+											onOpen={()=>this.openModal('Slackbot Victim Finder')}
 											onClose={() => this.setState({ loader: true })}
 											trigger={
 											<Card fluid>
@@ -343,6 +376,7 @@ class Work extends Component {
 											</Modal.Content>
 											<Modal.Actions>
 												<Button 
+													onClick={()=>this.toRepository('Slackbot Victim Finder')}	
 													color='black' 
 													href='https://github.com/mikeyamato/slackbot-random-victim-finder'  
 													rel="noopener noreferrer" 
